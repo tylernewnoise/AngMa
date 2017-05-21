@@ -1,0 +1,139 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[ngerman]{babel}		%dt. Übersetzung und Umlaute
+\usepackage[utf8]{inputenc}		%Umlaute direkt eingeben
+\usepackage{mathtools}			%Mathekrams
+\usepackage{paralist}			%bessere Listen
+\usepackage{amssymb}			%Mathesymbole
+\usepackage{amsthm}			%typesetting theorems (Text über = u.ä.)
+\usepackage{fancyhdr} 			%Headerstyles
+\usepackage{verbatim}			%Sourcecode einfügen
+\usepackage[margin=2.0cm,headheight=40pt,top=3cm]{geometry}
+\usepackage{tikz}
+\usepackage{cancel}
+\usepackage{stmaryrd}
+\usepackage{colortbl}
+\usetikzlibrary{matrix,positioning,arrows, automata}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\lhead{Blatt 01 - Teil 1}
+\rhead{Angewandte Mathematik}
+\cfoot{}
+\rfoot{\thepage}
+\begin{document}
+	\parindent0pt
+	\textbf{Aufgabe 01}\\
+	
+	\begin{compactenum} [(a)]
+		\item \begin{itemize}
+			\item $ <v,w> := v_1 * w_1 = w_1 * v_1 =: <w,v> $
+			\item $ <v+y,w> := (v+y)_1 * w_1 = (v_1 + y_1) * w_1 = v_1 * w_1 + y_1* w_1 =: <v,w> + <y,w>$
+			\item $ < \lambda v,w> := \lambda v_1 * w_1 = \lambda *(v_1 * w_1) =: \lambda * <v,w> $
+			\item $ <v,v> := v_1 * v_1 = v_1^2 \geq 0 \qquad \forall v \in \mathbb{R}^n $ (wegen dem Quadrat)
+			\item $ <0,0> := 0*0 = 0 $
+		\end{itemize}
+		$ \Longrightarrow $ Die Abbildung in (a) definiert ein Skalarprodukt\\
+	
+		\item $<v+y,w> \neq <v,w> + <y,w> $\\\\
+		Gegenbeispiel: Wir betrachten die Vektoren\\
+		$ \vec{v} = \begin{pmatrix}
+		1 \\ 2
+		\end{pmatrix} \qquad
+		\vec{y} = \begin{pmatrix}
+		3 \\ 4
+		\end{pmatrix} \qquad
+		\vec{w} = \begin{pmatrix}
+		5 \\ 1
+		\end{pmatrix}$\\
+		\\
+		$ <v+y,w> := \sqrt{\sum_{i = 1}^{n} (v+y)_i} * \sqrt{\sum_{i = 1}^{n} w_i} = \sqrt{\sum_{i = 1}^{n} \begin{pmatrix}
+			4 \\ 6 \end{pmatrix}} * \sqrt{\sum_{i = 1}^{n} \begin{pmatrix}
+			5 \\ 1 \end{pmatrix}} = \sqrt{10} * \sqrt{6} \approx 7,746$ \\
+		$ <v,w> + <y,w> := \sqrt{\sum_{i = 1}^{n} v_i} * \sqrt{\sum_{i = 1}^{n} w_i} + \sqrt{\sum_{i = 1}^{n} y_i} * \sqrt{\sum_{i = 1}^{n} w_i} = (\sqrt{3} * \sqrt{6}) + (\sqrt{7} * \sqrt{6}) \approx 10,723 $ \\ \\
+		$ \Longrightarrow $ Die Abbildung in (b) definiert kein Skalarprodukt \\
+		
+		\item $ <v+y,w> \neq <v,w> + <y,w> $\\\\
+		Gegenbeispiel: Wir betrachten die Vektoren\\
+		$ \vec{v} = \begin{pmatrix}
+		1 \\ 30
+		\end{pmatrix} \qquad
+		\vec{y} = \begin{pmatrix}
+		1 \\ -1
+		\end{pmatrix} \qquad
+		\vec{w} = \begin{pmatrix}
+		2 \\ 1
+		\end{pmatrix}$\\
+		$ <v+y,w> = \underset{1 \leq i \leq n}{\text{max}} (
+			(v_i+y_i) * w_i) = \underset{1 \leq i \leq n}{\text{max}} (\begin{pmatrix} 2 \\ 29 \end{pmatrix} * 
+			\begin{pmatrix} 2 \\ 1 \end{pmatrix}) = 29 $ \\
+		$ <v,w> + <y,w> := \underset{1 \leq i \leq n}{\text{max}} (v_i + w_i) + \underset{1 \leq i \leq n}{\text{max}} (y_i * w_i) = 
+		\underset{1 \leq i \leq n}{\text{max}} (
+		\begin{pmatrix}
+		1 \\ 30
+		\end{pmatrix} + 
+		\begin{pmatrix}
+		2 \\ 1
+		\end{pmatrix}) + \underset{1 \leq i \leq n}{\text{max}} (
+		\begin{pmatrix}
+		1 \\ -1
+		\end{pmatrix} + 
+		\begin{pmatrix}
+		2 \\ 1
+		\end{pmatrix} )\\
+		= 30 + 2 = 32 \\
+		\Longrightarrow $ Die Abbildung in (c) definiert kein Skalarprodukt
+		
+	\end{compactenum} \
+	
+	\textbf{Aufgabe 02}\\
+	\begin{compactenum} [(a)]
+		\item Sei $ \lambda \in [0,1] $\\
+		z.z.: Für alle Punkte a,b $ \in M $ gilt:\\
+		$ \lambda a + (1- \lambda) b = \lambda (a-b) + b \in M $\\
+		Sei also a,b $ \in M $\\
+		...
+		\\
+		\item \begin{itemize}
+			\item Folgende 3x3 Teilmatrix von A ist keine Basismatrix, da ihre Spalten linear abhängig sind:\\
+			$\begin{pmatrix}
+				1,6 & -0,6 & 3,6\\
+				-0,8 & 3,4 & 4,4\\
+				0,3 & 0,7 & 2,3\\
+			\end{pmatrix}$
+			\item Folgende Basismatrix von A hat keinen zulässigen Basispunkt\\
+			$ B := \{1,3,4\} \quad N := \{2,5,6,7\} $\\
+			$ A_B * x_B = b $
+			
+			$ \begin{pmatrix}
+			2,2 & -2 & 1,8\\
+			1,8 & 1 & 2,2\\
+			-1,4 & 1,7 & -3\\
+			\end{pmatrix} * 
+			\begin{pmatrix}
+			x_1 \\
+			x_3 \\
+			x_4\\
+			\end{pmatrix} = 
+			\begin{pmatrix}
+			1\\
+			0\\
+			0\\
+			\end{pmatrix}
+			\Longrightarrow
+				\begin{pmatrix}
+				x_1 \\
+				x_3 \\
+				x_4\\
+				\end{pmatrix} = 
+				\begin{pmatrix}
+				0,589161\\
+				-0,202797\\
+				-0.38986\\
+				\end{pmatrix}\\
+			\Rightarrow x_B \ngeq 0$
+		\end{itemize}
+	\end{compactenum}
+	
+	
+\end{document}
