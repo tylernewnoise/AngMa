@@ -1,0 +1,85 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[ngerman]{babel}		%dt. Übersetzung und Umlaute
+\usepackage[utf8]{inputenc}		%Umlaute direkt eingeben
+\usepackage{mathtools}			%Mathekrams
+\usepackage{paralist}			%bessere Listen
+\usepackage{amssymb}			%Mathesymbole
+\usepackage{amsthm}				%typesetting theorems (Text über = u.ä.)
+\usepackage{fancyhdr} 			%Headerstyles
+\usepackage{colortbl}			%Farben in Tabellen
+\usepackage{hhline}				%Rahmen in farbigen Cellen
+\usepackage[margin=2.0cm,headheight=40pt,top=3cm]{geometry}
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\lhead{Blatt 03 - Teil 2}
+\rhead{Angewandte Mathematik}
+\cfoot{}
+\rfoot{\thepage}
+\begin{document}
+	\parindent0pt
+	\textbf{Aufgabe 01}\\
+	
+	\textbf{Aufgabe 02}\\
+	
+	$(P_1) \text{ min} \{\ x_1+x_2+x_3+x_4+x_5+x_6 \mid 
+	\begin{matrix}
+	x_1 + x_3 + x_5 \geq 1\\
+	x_1 + x_2 + x_4 \geq 1\\
+	x_2 + x_4 \geq 1\\
+	x_2 + x_3 + x_5 + x_6 \geq 1\\
+	x_1 + x_6 \geq 1\\
+	x_4 + x_5 \geq 1 \\
+	x_i \geq 0; i\in \mathbb{N}; 0<i<7
+		\end{matrix}
+	\ \}$
+	\\\\
+	Die Variablen $ x_1 - x_6 $ stehen für die sechs Plätze, an denen Feuerwehrstationen gebaut werden können. Die Nebenbedingungen stehen Zeilenweise für einen Ort. Es ist immer 'größer gleich 1', da mindestens eine Feuerwehrstation im Wirkungsbereich des Ortes liegen muss. Da wir bis jetzt nur Maximierungsprobleme schriftlich gelöst haben, wandeln wir das Minimierungsproblem in seine Duale LOA um:
+	\[
+	c = b = 
+	\begin{pmatrix}
+	1\\
+	1\\
+	1\\
+	1\\
+	1\\
+	1\\
+	\end{pmatrix}
+	\quad
+	A^T =
+	\begin{pmatrix*}[r]
+	1 & 0 & 1 & 0 & 1 & 0\\
+	1 & 1 & 0 & 1 & 0 & 0\\
+	0 & 1 & 0 & 1 & 0 & 0\\
+	0 & 1 & 1 & 0 & 1 & 1\\
+	1 & 0 & 0 & 0 & 0 & 1\\
+	0 & 0 & 0 & 1 & 1 & 0\\
+	\end{pmatrix*}
+	\quad
+	A = 
+	\begin{pmatrix*}[r]
+	1 & 1 & 0 & 0 & 1 & 0\\
+	0 & 1 & 1 & 1 & 0 & 0\\
+	1 & 0 & 0 & 1 & 0 & 0\\
+	0 & 1 & 1 & 0 & 0 & 1\\
+	1 & 0 & 0 & 1 & 0 & 1\\
+	0 & 0 & 0 & 1 & 1 & 0\\
+	
+	\end{pmatrix*}
+	\] \\
+	$ \Longrightarrow (D_1) \text{ max} \{\ y_1+y_2+y_3+y_4+y_5+y_6 \mid 
+	\begin{matrix}
+	y_1 + y_2 + y_5 \leq 1\\
+	y_2 + y_3 + y_4 \leq 1\\
+	y_1 + y_4 \leq 1\\
+	y_2 + y_3 + y_6 \leq 1\\
+	y_1 + y_4 + y_6 \leq 1\\
+	y_4 + y_5 \leq 1 \\
+	x_i \geq 0; i\in \mathbb{N}; 0<i<7
+	\end{matrix}
+	\ \}$\\
+	
+	Da nur ganzzahlige Werte bei dieser LOA Sinn machen (man kann ja keine halbe Feuerwehrstation bauen) ist dieses Problem mit dem Gomory-Schnitt-Verfahren zu lösen!
+
+\end{document}
