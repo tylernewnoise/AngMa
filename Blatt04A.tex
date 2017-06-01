@@ -1,0 +1,67 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[ngerman]{babel}		%dt. Übersetzung und Umlaute
+\usepackage[utf8]{inputenc}		%Umlaute direkt eingeben
+\usepackage{mathtools}			%Mathekrams
+\usepackage{paralist}			%bessere Listen
+\usepackage{amssymb}			%Mathesymbole
+\usepackage{amsthm}				%typesetting theorems (Text über = u.ä.)
+\usepackage{fancyhdr} 			%Headerstyles
+\usepackage{colortbl}			%Farben in Tabellen
+\usepackage{hhline}				%Rahmen in farbigen Cellen
+\usepackage[margin=2.0cm,headheight=40pt,top=3cm]{geometry}
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\lhead{Blatt 04 - Teil 1}
+\rhead{Angewandte Mathematik}
+\cfoot{}
+\rfoot{\thepage}
+\begin{document}
+	\parindent0pt
+	\textbf{Aufgabe 01}\\
+	
+	\newpage
+	
+	\textbf{Aufgabe 02}\\
+	$y' + (2x - 1)y = xe^x$\\\\
+	Homogenen Teil l"osen:\\
+	\begin{align*}
+		& y' + (2x - 1) \cdot y   =  0\\
+		\Leftrightarrow \quad & \dfrac{y'}{y}  =  -2x + 1	\\
+		\Leftrightarrow \quad & \int \dfrac{y'}{y}dx  =  \int-2x + 1 dx \\
+		\Leftrightarrow \quad & \int \dfrac{1}{y}dy  =  -x^2 + x +c_2\\
+		\Leftrightarrow \quad & \text{ln}(y) + c_1  =  -x^2 + x +c_2 \\
+		\Leftrightarrow \quad & \text{ln}(y)  =  -x^2+ x + c_3  & \text{ mit }c_3 = c_2 - c_1 \\
+		\Leftrightarrow \quad & e^{\text{ln}(y)}  = e^{(-x^2+x)}c_4  & \text{ mit } c_4 = e^{c_3} \\
+		\Leftrightarrow \quad & y = e^{-x^2 + x}c_4
+	\end{align*}
+	Die vollst"andige L"osung lautet: $y = e^{-x^2 + x}c_4$.\\
+		
+	Ersetze nun $c$ mit $c(x)$: $\quad y = e^{-x^2 + x} \cdot c(x)$\\
+	
+	Ableiten:
+	\begin{align*}
+		y' & = e^{(-x^2 + x)} \cdot (-2x + 1) \cdot c(x) + e^{(-x^2 + x)} \cdot c'(x)\\
+		y' & = (-2x +1) \cdot y + e^{(-x^2 + x)} \cdot c'(x)\\
+		y' & = -(2x +1) \cdot y + e^{(-x^2 + x)} \cdot c'(x)\\
+		y' + (2x +1) \cdot y & = e^{(-x^2 + x)} \cdot c'(x)
+	\end{align*}
+	Inhomogenen Teil einsetzen: \[xe^x = e^{(-x^2 + x)} \cdot c'(x)\]
+	
+	$c(x)$ berechnen:
+	\begin{align*}
+		c'(x) & = \dfrac{xe^x}{e^{(-x^2 + x)}} = \dfrac{xe^x}{e^{-(x^2 + x)}} \\
+		c'(x) & = x\cdot e^x \cdot e^{(x^2 - x)} \\
+		c'(x) & = x\cdot e^{x^2}\\
+		\int c'(x) dx & = \int x \cdot e^{x^2} dx\\
+		c(x) & = \dfrac{e^{x^2}}{2} + c
+	\end{align*}
+
+	In $y$ einsetzen:
+	\begin{align*}
+	y & = e^{(-x^2 + x)} \cdot \Big( \dfrac{e^{x^2}}{2} + c\Big)\\
+	y & = \underline{\underline{\dfrac{1}{2} \cdot e^x + c \cdot e^{(-x^2 + x)}}}
+	\end{align*}
+
+\end{document}
