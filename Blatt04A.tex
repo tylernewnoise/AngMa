@@ -20,9 +20,61 @@
 \begin{document}
 	\parindent0pt
 	\textbf{Aufgabe 01}\\
-	
+		$y' = \dfrac{xy^3}{\sqrt{1 + x^2}}$\\
+	\begin{align*}
+	\dfrac{y'}{y^3} & = \dfrac{x}{\sqrt{1 + x^2}}\\
+	\int \dfrac{y'}{y^3}dx & = \int \dfrac{x}{\sqrt{1 + x^2}}dx\\
+	\end{align*}
+	Substitution von $\int \dfrac{y'}{y^3}dx$:
+	\[\int \dfrac{y'}{y^3} = \int \dfrac{1}{y^3}dy \text{ mit } f(w) = \dfrac{1}{w^3} \]
+	\begin{align*}
+	-\dfrac{1}{2y^2} + c_1 & = \int \dfrac{x}{\sqrt{1 + x^2}}dx
+	\end{align*}
+	Substitution von $\int \dfrac{x}{\sqrt{1 + x^2}}dx$:
+	\begin{align*}
+	z(x)  & = 1 + 2x^2\\
+	\dfrac{dz}{dx} = 4x & \Leftrightarrow dx = \dfrac{dz}{4x}\\
+	\int \dfrac{x}{\sqrt{z}}\dfrac{dz}{4x} & = \dfrac{1}{4} \int \dfrac{1}{\sqrt{z}}dz\\
+	\dfrac{1}{4} \int \dfrac{1}{\sqrt{z}}dz & = \dfrac{1}{4} \int z^{-\frac{1}{2}}dz\\
+	\dfrac{1}{2} \cdot 2 \sqrt{z} & = \dfrac{\sqrt{z}}{2}
+	\end{align*}
+	$z(x)$ einsetzen:
+	\begin{align*}
+	-\dfrac{1}{2y^2} + c_1  & = \dfrac{\sqrt{1 + 2x^2}}{2} + c_2 \\
+	-\dfrac{1}{2y^2} & = \dfrac{\sqrt{1 + 2x^2}}{2} + c_3 & \text{ mit } c_3 = c_2 - c_1 \\
+	-\dfrac{1}{2} & = \Big (\dfrac{\sqrt{1 + 2x^2}}{2} + c_3 \Big)y^2\\
+	y^2 & = \dfrac{-\frac{1}{2}}{\frac{\sqrt{1 + 2x^2}}{2} + c_3}\\
+	y^2 & = - \dfrac{1}{2 (\frac{\sqrt{1 + 2x^2}}{2} + c_3)}\\
+	y^2 & = - \dfrac{1}{\sqrt{1 + x^2} + 2c_3}
+	\end{align*}
+	Vollständige Lösung: $y = \sqrt[\pm]{\dfrac{1}{-2c_3 - \sqrt{1 + x^2}}} \quad \text{ mit } 2c_3 + \sqrt{2x^2 + 1} \neq 0$ 
 	\newpage
+	Somit ergibt sich für das Anfangswertproblem $y(0) = -1$ :
+	\begin{align*}
+	-1 & = \sqrt[\pm]{\dfrac{1}{-2c_3 - \sqrt{1 + 0^2}}}\\
+	-1 & = \sqrt[\pm]{\dfrac{1}{-2c_3 - 1 }}\\
+	\end{align*}
+	Fall 1:
+	\begin{align*}
+	1 & = \dfrac{1}{-2c_3 - 1}\\
+	1 & = -2c_3 - 1 = 1\\
+	2c_3 & = -2\\
+	c_3 & = -1
+	\end{align*}
+	\begin{center}
+		$\underline{\underline{y_1 = \sqrt{\dfrac{1}{2 - \sqrt{2x^2 + 1}}}}}$
+	\end{center}
 	
+	Fall 2:
+	\begin{align*}
+	1 & = \dfrac{1}{2c_3 + 1}\\
+	1 & = 2c_3 +1\\
+	c_3 & = 0
+	\end{align*}
+	\begin{center}
+		$\underline{\underline{y_2 = \sqrt{\dfrac{1}{-\sqrt{2x^2 + 1}}}}}$
+	\end{center}
+	\newpage
 	\textbf{Aufgabe 02}\\
 	$y' + (2x - 1)y = xe^x$\\\\
 	Homogenen Teil l"osen:\\
@@ -60,8 +112,12 @@
 
 	In $y$ einsetzen:
 	\begin{align*}
-	y & = e^{(-x^2 + x)} \cdot \Big( \dfrac{e^{x^2}}{2} + c\Big)\\
-	y & = \underline{\underline{\dfrac{1}{2} \cdot e^x + c \cdot e^{(-x^2 + x)}}}
+	y & = e^{(-x^2 + x)} \cdot \Big( \dfrac{e^{x^2}}{2} + c\Big)
 	\end{align*}
+	\begin{center}
+		$\underline{\underline{y = \dfrac{1}{2} \cdot e^x + c \cdot e^{(-x^2 + x)}}}$
+	\end{center}
+
+
 
 \end{document}
