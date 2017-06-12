@@ -1,0 +1,54 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[ngerman]{babel}		%dt. Übersetzung und Umlaute
+\usepackage[utf8]{inputenc}		%Umlaute direkt eingeben
+\usepackage{mathtools}			%Mathekrams
+\usepackage{paralist}			%bessere Listen
+\usepackage{amssymb}			%Mathesymbole
+\usepackage{amsthm}				%typesetting theorems (Text über = u.ä.)
+\usepackage{fancyhdr} 			%Headerstyles
+\usepackage{colortbl}			%Farben in Tabellen
+\usepackage{hhline}				%Rahmen in farbigen Cellen
+\usepackage[margin=2.0cm,headheight=40pt,top=3cm]{geometry}
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\lhead{Blatt 04 - Teil 2}
+\rhead{Angewandte Mathematik}
+\cfoot{}
+\rfoot{\thepage}
+\begin{document}
+	\parindent0pt
+	\textbf{Aufgabe 01}\\
+	
+	Beweis durch Kontraposition: Angenommen die drei Aussagen stimmen. Wir finden ein Gegenbeispiel für alle drei Aussagen:\\
+	
+	\begin{compactenum} [a)]
+		\item Sei $ a := (-1)^0*2^{-3}*0,10\underbrace{11...11}_{50 mal} \qquad b := (-1)^0*2^{-6}*0,111101 \Longrightarrow a, b \in \mathbb{G}$\\
+		$ a+b = (-1)^0*2^{-6}*0,00010\underbrace{11...11}_{50 mal} + (-1)^0*2^{-6}*0,111101 \\
+		= (-1)^0*2^{-7}*0,1000010\underbrace{11..11}_{49 mal} \not\in \mathbb{G}$
+		\item  Sei $ a:= (-1)^0*2^{-52}*0,\underbrace{11..11}_{52 mal} \qquad b:= (-1)^0*2^0*0,1$\\
+		\begin{tabbing}
+			$ a\boxplus b$ \=$= rd(a+b)$ \\
+			\>$ =rd((-1)^0*2^{-52}*0,\underbrace{11..11}_{52 mal}+(-1)^0*2^0*0,1) $ \\
+			\>$ =rd((-1)^0*2^{-52}*0,\underbrace{11..11}_{52 mal}+(-1)^0*2^{-52}*0,\underbrace{00..00}_{52 mal}1) $ \\
+			\>$ =rd((-1)^0*2^{-52}*0,\underbrace{11..11}_{53 mal})$\\
+			\>$ =(-1)^0*2^{-52}*0,\underbrace{11..11}_{52 mal}$\\
+			\>$ =a $
+		\end{tabbing}
+		\item Sei $ a:= (-1)^0*2^{-52}*0,\underbrace{11..11}_{52 mal} \qquad b:= (-1)^0*2^0*0,1 \qquad c:= b $\\
+		$ (a\boxplus b) \boxplus c \overset{\text{siehe Aufgabe b)}}{=} a \boxplus c \overset{\text{weil b $\equiv$ c}}{=} a$\\
+		\begin{tabbing}
+			$ a\boxplus (b\boxplus c) $ \=$ = a \boxplus (rd((-1)^0*2^0*0,1+(-1)^0*2^0*0,1))$\\
+			\> $ =a \boxplus (rd((-1)^0*2^{-1}*0,1)) $\\
+			\> $ =a \boxplus (-1)^0*2^{-1}*0,1 $\\
+			\> $ =rd((-1)^0*2^{-52}*0,\underbrace{11..11}_{52 mal}+(-1)^0*2^{-1}*0,1) $\\
+			\> $ =rd((-1)^0*2^{-52}*0,\underbrace{11..11}_{52 mal}+(-1)^0*2^{-52}*0,\underbrace{00..00}_{51 mal}1 $\\
+			\> $ =rd((-1)^0*2^{-52}*1,0) $ \\
+			\> $ =rd((-1)^0*2^{-53}*0,1) $\\
+			\> $ \neq a $
+		\end{tabbing}
+	\end{compactenum}
+	
+
+\end{document}
