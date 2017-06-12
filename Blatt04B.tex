@@ -19,36 +19,84 @@
 \rfoot{\thepage}
 \begin{document}
 	\parindent0pt
-	\textbf{Aufgabe 01}\\
+	\textbf{Aufgabe 03}\\
 	
 	Beweis durch Kontraposition: Angenommen die drei Aussagen stimmen. Wir finden ein Gegenbeispiel für alle drei Aussagen:\\
 	
 	\begin{compactenum} [a)]
-		\item Sei $ a := (-1)^0*2^{-3}*0,10\underbrace{11...11}_{50 mal} \qquad b := (-1)^0*2^{-6}*0,111101 \Longrightarrow a, b \in \mathbb{G}$\\
-		$ a+b = (-1)^0*2^{-6}*0,00010\underbrace{11...11}_{50 mal} + (-1)^0*2^{-6}*0,111101 \\
-		= (-1)^0*2^{-7}*0,1000010\underbrace{11..11}_{49 mal} \not\in \mathbb{G}$
-		\item  Sei $ a:= (-1)^0*2^{-52}*0,\underbrace{11..11}_{52 mal} \qquad b:= (-1)^0*2^0*0,1$\\
+		\item Sei $ a := (-1)^0\cdot2^{-3}\cdot0,10\underbrace{11...11}_{50 mal} \qquad b := (-1)^0\cdot2^{-6}\cdot0,111101 \Longrightarrow a, b \in \mathbb{G}$\\
+		$ a+b = (-1)^0\cdot2^{-6}\cdot0,00010\underbrace{11...11}_{50 mal} + (-1)^0\cdot2^{-6}\cdot0,111101 \\
+		= (-1)^0\cdot2^{-7}\cdot0,1000010\underbrace{11..11}_{49 mal} \not\in \mathbb{G}$
+		\item  Sei $ a:= (-1)^0\cdot2^{-52}\cdot0,\underbrace{11..11}_{52 mal} \qquad b:= (-1)^0\cdot2^0\cdot0,1$\\
 		\begin{tabbing}
 			$ a\boxplus b$ \=$= rd(a+b)$ \\
-			\>$ =rd((-1)^0*2^{-52}*0,\underbrace{11..11}_{52 mal}+(-1)^0*2^0*0,1) $ \\
-			\>$ =rd((-1)^0*2^{-52}*0,\underbrace{11..11}_{52 mal}+(-1)^0*2^{-52}*0,\underbrace{00..00}_{52 mal}1) $ \\
-			\>$ =rd((-1)^0*2^{-52}*0,\underbrace{11..11}_{53 mal})$\\
-			\>$ =(-1)^0*2^{-52}*0,\underbrace{11..11}_{52 mal}$\\
+			\>$ =rd((-1)^0\cdot2^{-52}\cdot0,\underbrace{11..11}_{52 mal}+(-1)^0\cdot2^0\cdot0,1) $ \\
+			\>$ =rd((-1)^0\cdot2^{-52}\cdot0,\underbrace{11..11}_{52 mal}+(-1)^0\cdot2^{-52}\cdot0,\underbrace{00..00}_{52 mal}1) $ \\
+			\>$ =rd((-1)^0\cdot2^{-52}\cdot0,\underbrace{11..11}_{53 mal})$\\
+			\>$ =(-1)^0\cdot2^{-52}\cdot0,\underbrace{11..11}_{52 mal}$\\
 			\>$ =a $
 		\end{tabbing}
-		\item Sei $ a:= (-1)^0*2^{-52}*0,\underbrace{11..11}_{52 mal} \qquad b:= (-1)^0*2^0*0,1 \qquad c:= b $\\
+		\item Sei $ a:= (-1)^0\cdot2^{-52}\cdot0,\underbrace{11..11}_{52 mal} \qquad b:= (-1)^0\cdot2^0\cdot0,1 \qquad c:= b $\\
 		$ (a\boxplus b) \boxplus c \overset{\text{siehe Aufgabe b)}}{=} a \boxplus c \overset{\text{weil b $\equiv$ c}}{=} a$\\
 		\begin{tabbing}
-			$ a\boxplus (b\boxplus c) $ \=$ = a \boxplus (rd((-1)^0*2^0*0,1+(-1)^0*2^0*0,1))$\\
-			\> $ =a \boxplus (rd((-1)^0*2^{-1}*0,1)) $\\
-			\> $ =a \boxplus (-1)^0*2^{-1}*0,1 $\\
-			\> $ =rd((-1)^0*2^{-52}*0,\underbrace{11..11}_{52 mal}+(-1)^0*2^{-1}*0,1) $\\
-			\> $ =rd((-1)^0*2^{-52}*0,\underbrace{11..11}_{52 mal}+(-1)^0*2^{-52}*0,\underbrace{00..00}_{51 mal}1 $\\
-			\> $ =rd((-1)^0*2^{-52}*1,0) $ \\
-			\> $ =rd((-1)^0*2^{-53}*0,1) $\\
+			$ a\boxplus (b\boxplus c) $ \=$ = a \boxplus (rd((-1)^0\cdot2^0\cdot0,1+(-1)^0\cdot2^0\cdot0,1))$\\
+			\> $ =a \boxplus (rd((-1)^0\cdot2^{-1}\cdot0,1)) $\\
+			\> $ =a \boxplus (-1)^0\cdot2^{-1}\cdot0,1 $\\
+			\> $ =rd((-1)^0\cdot2^{-52}\cdot0,\underbrace{11..11}_{52 mal}+(-1)^0\cdot2^{-1}\cdot0,1) $\\
+			\> $ =rd((-1)^0\cdot2^{-52}\cdot0,\underbrace{11..11}_{52 mal}+(-1)^0\cdot2^{-52}\cdot0,\underbrace{00..00}_{51 mal}1 $\\
+			\> $ =rd((-1)^0\cdot2^{-52}\cdot1,0) $ \\
+			\> $ =rd((-1)^0\cdot2^{-53}\cdot0,1) $\\
 			\> $ \neq a $
 		\end{tabbing}
 	\end{compactenum}
+	\newpage
+	\textbf{Aufgabe 04}\\
+	\begin{enumerate}[a)]
+		\item
+			\begin{enumerate}
+				\item[a1)]
+				Jacobi-Matrix:
+				\[
+				J = 
+				\begin{pmatrix}
+					\dfrac{1}{y} \quad -\dfrac{x}{y^2}
+				\end{pmatrix}
+				\]
+				Absolute komponentenweise Kondition:
+				\[
+				\kappa^{abs}_{1,1} = \Big\vert \dfrac{1}{y} \Big\vert \quad\quad \kappa^{abs}_{1,2} = \Big\vert -\dfrac{x}{y^2} \Big \vert
+				\]
+				Relative komponentenweise Kondition:
+				\[
+				\kappa^{rel}_{1,1} = \Big\vert \dfrac{1}{y}\Big\vert \cdot \dfrac{\vert x \vert}{\Big \vert \dfrac{x}{y} \Big\vert} \quad\quad \kappa^{rel}_{1,2} = \Big\vert -\dfrac{x}{y^2}\Big\vert \cdot \dfrac{\vert y \vert}{\Big \vert \dfrac{x}{y} \Big\vert}
+				\]
+				\item[a2)]
+				Jacobi-Matrix:
+				\[
+				J = 
+				\begin{pmatrix}
+					y \cdot cos(x \cdot y) \quad x \cdot cos(x \cdot y)
+				\end{pmatrix}
+				\]
+				Absolute komponentenweise Kondition:
+				\[
+				\kappa^{abs}_{1,1} = \Big\vert y \cdot cos(x \cdot y) \Big\vert \quad\quad \kappa^{abs}_{1,2} = \Big\vert x \cdot cos(x \cdot y) \Big \vert
+				\]
+				Relative komponentenweise Kondition:
+				\[
+				\kappa^{rel}_{1,1} = \Big\vert y \cdot cos(x \cdot y) \Big\vert \cdot \dfrac{\vert x \vert}{\Big \vert sin(x \cdot y) \Big\vert} \quad\quad \kappa^{rel}_{1,2} = \Big\vert x \cdot cos(x \cdot y) \Big\vert \cdot \dfrac{\vert y \vert}{\Big \vert sin(x \cdot y) \Big\vert}
+				\]
+			\end{enumerate}
+				\item
+			\begin{enumerate}
+				\item
+				\item
+				\item
+			\end{enumerate}
+
+
+	\end{enumerate}
+	
 	
 
 \end{document}
