@@ -1,0 +1,58 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[ngerman]{babel}		%dt. Übersetzung und Umlaute
+\usepackage[utf8]{inputenc}		%Umlaute direkt eingeben
+\usepackage{mathtools}			%Mathekrams
+\usepackage{paralist}			%bessere Listen
+\usepackage{amssymb}			%Mathesymbole
+\usepackage{amsthm}				%typesetting theorems
+
+\usepackage{fancyhdr} 			%Headerstyles
+\usepackage[margin=2.0cm,headheight=40pt,top=3cm]{geometry}
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\lhead{Blatt 05 - Teil 1}
+\rhead{Angewandte Mathematik}
+\cfoot{}
+\rfoot{\thepage}
+\begin{document}
+	\parindent0pt
+	\textbf{Aufgabe 01}\\
+	TODO
+	\newpage
+	\textbf{Aufgabe 02}
+	\begin{enumerate}[a)]
+		\item Fixpunktiteration für $f_1(x) = \frac{1}{2} \mathrm{cos}(x) - x$\\
+		Voraussetzung prüfen: TODO\\\\\\
+		\begin{tabular}{|c|c|c|c|}
+			\hline 
+			$i$& $x_{i-1}$ & $f(x_{i-1})$ & $f(x_{i-1}) + x_{i-1}$ \\ 
+			\hline 
+			0 & 0 & 0,5 & 0,5 \\ 
+			\hline 
+			1 & 0,5 & -0,061208719054814 & 0,438791280945186 \\
+			\hline 
+			2 &  0,438791280945186 & 0,013841640715023 & 0,45263292166021  \\
+			\hline 
+			3 & 0,45263292166021 & -0,00298354544655 & 0,44964937621366  \\
+			\hline 
+			4 & 0,44964937621366 & 0,00065040191779	& 0,45029977813145 \\
+			\hline 
+			5 & 0,44964937621366 & 0,00065040191779 & 0,45029977813145 \\
+			\hline 
+		\end{tabular} \\\\
+		$x_5 = 0,45029977813145$
+	
+	
+	
+	
+	
+	
+	
+		\item 
+		\item 
+	\end{enumerate}
+	
+
+\end{document}
