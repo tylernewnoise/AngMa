@@ -21,6 +21,7 @@
 	\textbf{Aufgabe 01}\\
 	\begin{compactenum}[a)]
 		\item TODO
+		\newpage
 		\item $f$ und $g$ sind für Single Precision numerisch stabil, für Double Precision nicht. Dies sieht man daran, dass sich die Ergebnisse von $f$ und $g$ in Double Precision unterscheiden.\\
 		Da wir uns Mathematica nicht leisten können, haben wir die Funktionen selbst implementiert. Die Ergebnisse sind:\\\\
 		\begin{tabular}{|c|r|r|r|r|}
@@ -175,8 +176,8 @@
 		\end{pmatrix}
 		=
 		\begin{pmatrix}
-		0 & \frac{1}{2} \\[2pt]
-		\frac{1}{2} & 0
+		0 & -\frac{1}{2} \\[2pt]
+		-\frac{1}{2} & 0
 		\end{pmatrix}
 		\]
 		\[
@@ -192,156 +193,156 @@
 		\end{pmatrix}
 		=
 		\begin{pmatrix}
-		\frac{1}{2}\\[2pt]
-		\frac{1}{2}
+		\frac{1}{2}\\
+		0
 		\end{pmatrix}
 		\]
 		\begin{align*}
-		x_1 = & 
-		\begin{pmatrix}
-		0 & \frac{1}{2}\\[2pt]
-		\frac{1}{2} & 0
-		\end{pmatrix} 
-		\cdot
-		\begin{pmatrix}
-		0\\
-		0
-		\end{pmatrix}
-		+
-		\begin{pmatrix}
-		\frac{1}{2}\\[2pt]
-		\frac{1}{2}
-		\end{pmatrix}
-		=
-		\begin{pmatrix}
-		\frac{1}{2}\\[2pt]
-		\frac{1}{2}
-		\end{pmatrix}\\
-		x_2 = &
-		\begin{pmatrix}
-		0 & \frac{1}{2}\\[2pt]
-		\frac{1}{2} & 0
-		\end{pmatrix} 
-		\cdot
-		\begin{pmatrix}
-		\frac{1}{2}\\[2pt]
-		\frac{1}{2}
-		\end{pmatrix}
-		+
-		\begin{pmatrix}
-		\frac{1}{2}\\[2pt]
-		\frac{1}{2}
-		\end{pmatrix}
-		=
-		\begin{pmatrix}
-		\frac{1}{4}\\[2pt]
-		\frac{1}{4}
-		\end{pmatrix}
-		+
-		\begin{pmatrix}
-		\frac{1}{2}\\[2pt]
-		\frac{1}{2}
-		\end{pmatrix}
-		=
-		\begin{pmatrix}
-		\frac{3}{4}\\[2pt]
-		\frac{3}{4}
-		\end{pmatrix}\\
-		x_3 = &
-		\begin{pmatrix}
-		0 & \frac{1}{2}\\[2pt]
-		\frac{1}{2} & 0
-		\end{pmatrix} 
-		\cdot
-		\begin{pmatrix}
-		\frac{3}{4}\\[2pt]
-		\frac{3}{4}
-		\end{pmatrix}
-		+
-		\begin{pmatrix}
-		\frac{1}{2}\\[2pt]
-		\frac{1}{2}
-		\end{pmatrix}
-		=
-		\begin{pmatrix}
-		\frac{3}{8}\\[2pt]
-		\frac{3}{8}
-		\end{pmatrix}
-		+
-		\begin{pmatrix}
-		\frac{1}{2}\\[2pt]
-		\frac{1}{2}
-		\end{pmatrix}
-		=
-		\begin{pmatrix}
-		\frac{7}{8}\\[2pt]
-		\frac{7}{8}
-		\end{pmatrix}\\
-		x_4 = &
-		\begin{pmatrix}
-		0 & \frac{1}{2}\\[2pt]
-		\frac{1}{2} & 0
-		\end{pmatrix} 
-		\cdot
-		\begin{pmatrix}
-		\frac{7}{8}\\[2pt]
-		\frac{7}{8}
-		\end{pmatrix}
-		+
-		\begin{pmatrix}
-		\frac{1}{2}\\[2pt]
-		\frac{1}{2}
-		\end{pmatrix}
-		=
-		\begin{pmatrix}
-		\frac{7}{16}\\[2pt]
-		\frac{7}{16}
-		\end{pmatrix}
-		+
-		\begin{pmatrix}
-		\frac{1}{2}\\[2pt]
-		\frac{1}{2}
-		\end{pmatrix}
-		=
-		\begin{pmatrix}
-		\frac{15}{16}\\[2pt]
-		\frac{15}{16}
-		\end{pmatrix}\\
-		x_5 = &
-		\begin{pmatrix}
-		0 & \frac{1}{2}\\[2pt]
-		\frac{1}{2} & 0
-		\end{pmatrix} 
-		\cdot
-		\begin{pmatrix}
-		\frac{15}{16}\\[2pt]
-		\frac{15}{16}
-		\end{pmatrix}
-		+
-		\begin{pmatrix}
-		\frac{1}{2}\\[2pt]
-		\frac{1}{2}
-		\end{pmatrix}
-		=
-		\begin{pmatrix}
-		\frac{15}{32}\\[2pt]
-		\frac{15}{32}
-		\end{pmatrix}
-		+
-		\begin{pmatrix}
-		\frac{1}{2}\\[2pt]
-		\frac{1}{2}
-		\end{pmatrix}
-		=
-		\begin{pmatrix}
-		\frac{31}{32}\\[2pt]
-		\frac{31}{32}
-		\end{pmatrix}
+			x_1 = & 
+			\begin{pmatrix}
+			0 & -\frac{1}{2}\\[2pt]
+			-\frac{1}{2} & 0
+			\end{pmatrix} 
+			\cdot
+			\begin{pmatrix}
+			0\\
+			0
+			\end{pmatrix}
+			+
+			\begin{pmatrix}
+			\frac{1}{2}\\
+			0
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+			\frac{1}{2}\\
+			0
+			\end{pmatrix}\\
+			x_2 = &
+			\begin{pmatrix}
+			0 & -\frac{1}{2}\\[2pt]
+			-\frac{1}{2} & 0
+			\end{pmatrix} 
+			\cdot
+			\begin{pmatrix}
+			\frac{1}{2}\\
+			0
+			\end{pmatrix}
+			+
+			\begin{pmatrix}
+			\frac{1}{2}\\
+			0
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+			0\\
+			-\frac{1}{4}
+			\end{pmatrix}
+			+
+			\begin{pmatrix}
+			\frac{1}{2}\\
+			0
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+			\frac{1}{2}\\[2pt]
+			-\frac{1}{4}
+			\end{pmatrix}\\
+			x_3 = &
+			\begin{pmatrix}
+			0 & -\frac{1}{2}\\[2pt]
+			-\frac{1}{2} & 0
+			\end{pmatrix} 
+			\cdot
+			\begin{pmatrix}
+			\frac{1}{2}\\[2pt]
+			-\frac{1}{4}
+			\end{pmatrix}
+			+
+			\begin{pmatrix}
+			\frac{1}{2}\\
+			0
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+			\frac{1}{8}\\[2pt]
+			-\frac{1}{4}
+			\end{pmatrix}
+			+
+			\begin{pmatrix}
+			\frac{1}{2}\\
+			0
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+			\frac{5}{8}\\[2pt]
+			-\frac{1}{4}
+			\end{pmatrix}\\
+			x_4 = &
+			\begin{pmatrix}
+			0 & -\frac{1}{2}\\[2pt]
+			-\frac{1}{2} & 0
+			\end{pmatrix} 
+			\cdot
+			\begin{pmatrix}
+			\frac{5}{8}\\[2pt]
+			-\frac{1}{4}
+			\end{pmatrix}
+			+
+			\begin{pmatrix}
+			\frac{1}{2}\\
+			0
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+			\frac{1}{8}\\[2pt]
+			-\frac{5}{16}
+			\end{pmatrix}
+			+
+			\begin{pmatrix}
+			\frac{1}{2}\\
+			0
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+			\frac{5}{8}\\[2pt]
+			-\frac{1}{3}
+			\end{pmatrix}\\
+			x_5 = &
+			\begin{pmatrix}
+			0 & -\frac{1}{2}\\[2pt]
+			-\frac{1}{2} & 0
+			\end{pmatrix} 
+			\cdot
+			\begin{pmatrix}
+			\frac{5}{8}\\[2pt]
+			-\frac{1}{3}
+			\end{pmatrix}
+			+
+			\begin{pmatrix}
+			\frac{1}{2}\\
+			0
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+			\frac{1}{6}\\[2pt]
+			-\frac{5}{16}
+			\end{pmatrix}
+			+
+			\begin{pmatrix}
+			\frac{1}{2}\\
+			0
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+			\frac{2}{3}\\[2pt]
+			-\frac{1}{3}
+			\end{pmatrix}
 		\end{align*}
 		$\underline{\underline{x =
 		\begin{pmatrix}
-		\frac{31}{32}\\[2pt]
-		\frac{31}{32}
+		\frac{2}{3}\\[2pt]
+		-\frac{1}{3}
 		\end{pmatrix}}}$
 		\newpage
 		\item 
