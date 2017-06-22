@@ -23,32 +23,32 @@
 	\textbf{Aufgabe 03}\\
 	Zusammenfassung:
 	\begin{itemize}
-		\item Produkt 1: $x_1$\\
-		Produkt 2: $x_2$
-		\item Gewinn soll maximiert werden: $2000x_1 + 3000x_3$
-		\item Maschinen laufen 12h und 16h und ben"otigen 2h und 2h bzw. 4h zur Herstellung eines Produkts:
+		\item 
+		Produkt 1: $P_1$\\
+		Produkt 2: $P_2$
+		\item Maschinen $M_1$ und $M_2$ laufen 12h und 16h und ben"otigen 2h und 2h bzw. 4h zur Herstellung eines Produkts:\\
+		\begin{align*}
+		\text{Sei: } & x_1 := P_1 \text{ an } M_1\\
+		& x_2 := P_1 \text{ an } M_2\\
+		& y_1 := P_2 \text{ an } M_1
+		\end{align*}
+		\item Gewinn soll maximiert werden: $\mathrm{max}(2000(x_1 + x_2) + 3000y_1)$
+		\item 20 Einheiten an Material sind vorhanden, wobei $P_1$ 2 Einheiten und $P_2$ 4 Einheiten an den Maschinen ben"otigt:
 		\[
 		\begin{matrix}
-			2x_1 + 2x_2 \leq 12\\
-			4x_1 + 0x_2 \leq 16
-		\end{matrix}
-		\]
-		\item 20 Einheiten an Material sind vorhanden, wobei $x_1$ 2 Einheiten und $x_2$ 4 Einheiten an den Maschinen ben"otigt:
-		\[
-		\begin{matrix}
-		2x_1 + 4x_2 \leq 20\\
-		2x_1 + 0x_2 \leq 20
+		2(x_1 + x_2) + 4y_1 \leq 20\\
+		2x_1 + 2y_1 \leq 12\\
+		4x_2 \leq 16
 		\end{matrix}
 		\]
 	\end{itemize}
 	Daraus ergibt sich:
 	\[
-	(P) \text{ max} \{\ 2000x_1 + 3000x_2 \mid \begin{matrix}
-	2x_1 + 2x_2 \leq 12\\
-	4x_1 + 0x_2 \leq 16\\
-	2x_1 + 4x_2 \leq 20\\
-	2x_1 + 0x_2 \leq 20\\
-	x_1, x_2 \geq 0
+	(P) \mathrm{max}(2000(x_1 + x_2) + 3000y_1) \mid \begin{matrix}
+	2x_1 + 2x_2 + 4y_1 \leq 20\\
+	2x_1 + 0x_2 + 2y_1 \leq 12\\
+	0x_1 + 4x_2 + 0y_1 \leq 16\\
+	x_1, x_2, y_1 \geq 0
 	\end{matrix}
 	\
 	\}
@@ -57,121 +57,96 @@
 	\[
 	A:=
 	\begin{pmatrix}
-	2 & 2 & 1 & 0 & 0 & 0\\
-	4 & 0 & 0 & 1 & 0 & 0\\
-	2 & 4 & 0 & 0 & 1 & 0\\
-	2 & 0 & 0 & 0 & 0 & 1
+	2 & 2 & 4 & 1 & 0 & 0\\
+	2 & 0 & 2 & 0 & 1 & 0\\
+	0 & 4 & 0 & 0 & 0 & 1\\
 	\end{pmatrix} \quad b:= 
 	\begin{pmatrix}
-	12\\
-	16\\
 	20\\
-	20
+	12\\
+	16
 	\end{pmatrix}
 	\]
 	Daraus ergeben sich die folgenden Simplextableaus:\\
 	\[
 	\setlength{\extrarowheight}{2pt}
-	\begin{tabular}{cccc}
-		\hhline{~~--}
-		 & \multicolumn{1}{c|}{} & \multicolumn{1}{c}{\cellcolor[gray]{0.9}$x_1$} & \multicolumn{1}{c}{$x_2$} \\ \hhline{~---}
-		\multicolumn{1}{c|}{} & \multicolumn{1}{c|}{0} & \multicolumn{1}{l}{\cellcolor[gray]{0.9}-2000} & \multicolumn{1}{l}{-3000} \\ \hhline{----}
-		\multicolumn{1}{|c|}{$u_1$} & \multicolumn{1}{c|}{12} & \cellcolor[gray]{0.9}2 & 2 \\ 
-		\multicolumn{1}{|c|}{\cellcolor[gray]{0.9}$u_2$} & \multicolumn{1}{c|}{\cellcolor[gray]{0.9}16} & 4 & \cellcolor[gray]{0.9}0\\ 
-		\multicolumn{1}{|c|}{$u_3$} & \multicolumn{1}{c|}{20} & \cellcolor[gray]{0.9}2 & 4\\
-		\multicolumn{1}{|c|}{$u_4$} & \multicolumn{1}{c|}{20} & \cellcolor[gray]{0.9}2 & 0\\
-		\multicolumn{4}{c}{$B^+ = \{u_1, u_2, u_3, u_4\}$} 
+	\begin{tabular}{ccccc}
+		\hhline{~~---}
+		& \multicolumn{1}{c|}{} & \cellcolor[gray]{0.9}$x_1$ & $x_2$ & $y_1$ \\ \hhline{~----}
+		\multicolumn{1}{c|}{} & \multicolumn{1}{c|}{0} & \cellcolor[gray]{0.9}-2000 & -2000 & -3000 \\ \hhline{-----}
+		\multicolumn{1}{|c|}{$u_1$} & \multicolumn{1}{c|}{20} & \cellcolor[gray]{0.9}2 & 2 & 4\\ 
+		\multicolumn{1}{|c|}{\cellcolor[gray]{0.9}$u_2$} & \multicolumn{1}{c|}{\cellcolor[gray]{0.9}12} & 2 & \cellcolor[gray]{0.9}0 & \cellcolor[gray]{0.9}2\\ 
+		\multicolumn{1}{|c|}{$u_3$} & \multicolumn{1}{c|}{16} & \cellcolor[gray]{0.9}4 & 4 & 0\\
+		\multicolumn{5}{c}{$B^+ = \{u_1, u_2, u_3\}$} 
 	\end{tabular}
 	\setlength{\extrarowheight}{0pt}
 	\quad
 	x^* = 
 	\begin{pmatrix}
 	x_1\\
-	x_2
+	x_2\\
+	y_1
 	\end{pmatrix}
 	=
 	\begin{pmatrix}
 	0\\
+	0\\
 	0
 	\end{pmatrix}
-	\quad
-	\quad
+	\quad\quad
 	\setlength{\extrarowheight}{2pt}
-	\begin{tabular}{ccrc}
-		\hhline{~~--}
-		& \multicolumn{1}{c|}{} & \multicolumn{1}{c}{$u_2$} & \multicolumn{1}{c}{$\cellcolor[gray]{0.9}x_2$} \\ \hhline{~---}
-		\multicolumn{1}{c|}{} & \multicolumn{1}{c|}{8000} & \multicolumn{1}{l}{500} & \multicolumn{1}{l}{\cellcolor[gray]{0.9}-3000} \\ \hline
-		\multicolumn{1}{|c|}{\cellcolor[gray]{0.9}$u_1$} & \multicolumn{1}{c|}{\cellcolor[gray]{0.9}4} & \cellcolor[gray]{0.9}$-\frac{1}{2}$ & 2 \\ 
-		\multicolumn{1}{|c|}{$x_1$} & \multicolumn{1}{c|}{4} & $\frac{1}{4}$ & \cellcolor[gray]{0.9}0\\ 
-		\multicolumn{1}{|c|}{$u_3$} & \multicolumn{1}{c|}{12} & $-\frac{1}{2}$ & \cellcolor[gray]{0.9}4\\
-		\multicolumn{1}{|c|}{$u_4$} & \multicolumn{1}{c|}{12} & $-\frac{1}{2}$ & \cellcolor[gray]{0.9}0\\
-		\multicolumn{4}{c}{$B^+ = \{u_1, u_3\}$} 
+	\begin{tabular}{ccccc}
+	\hhline{~~---}
+	& \multicolumn{1}{c|}{} & $u_2$ & \cellcolor[gray]{0.9}$x_2$ & $y_1$ \\ \hhline{~----}
+	\multicolumn{1}{c|}{} & \multicolumn{1}{c|}{12000} & 1000 & \cellcolor[gray]{0.9}-2000 & -1000\\ \hhline{-----}
+	\multicolumn{1}{|c|}{\cellcolor[gray]{0.9}$u_1$} & \multicolumn{1}{c|}{\cellcolor[gray]{0.9}8} & \cellcolor[gray]{0.9} -1 & 2 & \cellcolor[gray]{0.9}2 \\ 
+	\multicolumn{1}{|c|}{$x_1$} & \multicolumn{1}{c|}{6} & $\frac{1}{2}$ & \cellcolor[gray]{0.9}0 & 1\\ 
+	\multicolumn{1}{|c|}{$u_3$} & \multicolumn{1}{c|}{-8} & -2 & \cellcolor[gray]{0.9}4 & -4\\
+	\multicolumn{5}{c}{$B^+ = \{u_1\}$} 
 	\end{tabular}
 	\setlength{\extrarowheight}{0pt}
 	\quad
 	x^* = 
 	\begin{pmatrix}
 	x_1\\
-	x_2
+	x_2\\
+	y_1
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+	6\\
+	0\\
+	0
+	\end{pmatrix}
+	\]
+	\\\\
+	$
+	\setlength{\extrarowheight}{2pt}
+	\begin{tabular}{ccccc}
+	\hhline{~~---}
+	& \multicolumn{1}{c|}{} & $u_2$ & $u_1$ & $y_1$ \\ \hhline{~----}
+	\multicolumn{1}{c|}{} & \multicolumn{1}{c|}{20000} & 0 & 1000 & 1000\\ \hhline{-----}
+	\multicolumn{1}{|c|}{$x_2$} & \multicolumn{1}{c|}{4} & $-\frac{1}{2}$ & $\frac{1}{2}$ & 1\\ 
+	\multicolumn{1}{|c|}{$x_1$} & \multicolumn{1}{c|}{6} & $\frac{1}{2}$ & 0 & 1\\ 
+	\multicolumn{1}{|c|}{$u_3$} & \multicolumn{1}{c|}{-24} & 0 & -2 & -8\\
+	\end{tabular}
+	\setlength{\extrarowheight}{0pt}
+	\quad
+	x^* = 
+	\begin{pmatrix}
+	x_1\\
+	x_2\\
+	y_1
 	\end{pmatrix}
 	=
 	\begin{pmatrix}
 	4\\
+	6\\
 	0
 	\end{pmatrix}	
-	\]
-	\ \\
-	\[
-	\setlength{\extrarowheight}{2pt}
-	\begin{tabular}{ccrc}
-	\hhline{~~--}
-	& \multicolumn{1}{c|}{} & \multicolumn{1}{c}{\cellcolor[gray]{0.9}$u_2$} & \multicolumn{1}{c}{$u_1$} \\ \hhline{~---}
-	\multicolumn{1}{c|}{} & \multicolumn{1}{c|}{14000} & \multicolumn{1}{l}{\cellcolor[gray]{0.9}-250} & \multicolumn{1}{l}{1500} \\ \hline
-	\multicolumn{1}{|c|}{$x_2$} & \multicolumn{1}{c|}{2} & \cellcolor[gray]{0.9}$-\frac{1}{4}$ & $\frac{1}{2}$ \\ 
-	\multicolumn{1}{|c|}{$x_1$} & \multicolumn{1}{c|}{4} & \cellcolor[gray]{0.9}$\frac{1}{4}$ & 0\\ 
-	\multicolumn{1}{|c|}{\cellcolor[gray]{0.9}$u_3$} & \multicolumn{1}{c|}{\cellcolor[gray]{0.9}4} & $\frac{1}{2}$ & \cellcolor[gray]{0.9}-2\\
-	\multicolumn{1}{|c|}{$u_4$} & \multicolumn{1}{c|}{12} & \cellcolor[gray]{0.9}$-\frac{1}{2}$ & 0\\
-	\multicolumn{4}{c}{$B^+ = \{x_1, u_3\}$} 
-	\end{tabular}
-	\setlength{\extrarowheight}{0pt}
-	\quad
-	x^* = 
-	\begin{pmatrix}
-	x_1\\
-	x_2
-	\end{pmatrix}
-	=
-	\begin{pmatrix}
-	4\\
-	2
-	\end{pmatrix}
-	\quad
-	\quad
-	\setlength{\extrarowheight}{2pt}
-	\begin{tabular}{ccrr}
-	\cline{3-4}
-	& \multicolumn{1}{c|}{} & \multicolumn{1}{c}{$u_3$} & \multicolumn{1}{c}{$u_1$} \\ \cline{2-4}
-	\multicolumn{1}{c|}{} & \multicolumn{1}{c|}{16000} & \multicolumn{1}{l}{500} & \multicolumn{1}{l}{14000} \\ \hline
-	\multicolumn{1}{|c|}{$x_2$} & \multicolumn{1}{c|}{4} & $\frac{1}{2}$ & $-\frac{1}{2}$ \\ 
-	\multicolumn{1}{|c|}{$x_1$} & \multicolumn{1}{c|}{2} & $-\frac{1}{2}$ & 1\\ 
-	\multicolumn{1}{|c|}{$u_2$} & \multicolumn{1}{c|}{8} & 2 & -4\\
-	\multicolumn{1}{|c|}{$u_4$} & \multicolumn{1}{c|}{16} & 1 & 2
-	\end{tabular}
-	\setlength{\extrarowheight}{0pt}
-	\quad
-	x^* = 
-	\begin{pmatrix}
-	x_1\\
-	x_2
-	\end{pmatrix}
-	=
-	\begin{pmatrix}
-	2\\
-	4
-	\end{pmatrix}	
-	\]
-	\ \\
-	Daraus folgt, dass Produkt $x_1$ 2 mal und Produkt $x_2$ 4 mal hergestellt werden m"ussen um einen maximalen Gewinn von 16000 Euro zu erzielen.
+	$\\
+	
+	Das Tableau ist damit optimal, es kann maximal ein Gewinn von 20000 Euro erzielt werden. Es muss nur das Produkt $P_1$ an den beiden Standorten in den Mengen 4 und 6 hergestellt werden. Produkt $P_2$ ist für eine Gewinnmaximierung nicht notwendig.
 	\newpage
 	\textbf{Aufgabe 04}
 	\begin{compactenum} [(a)]
