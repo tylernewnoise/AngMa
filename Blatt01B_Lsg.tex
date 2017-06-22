@@ -8,6 +8,7 @@
 \usepackage{fancyhdr} 			%Headerstyles
 \usepackage{colortbl}			%Farben in Tabellen
 \usepackage{hhline}				%Rahmen in farbigen Cellen
+\usepackage{multicol}
 \usepackage[margin=2.0cm,headheight=40pt,top=3cm]{geometry}
 \pagestyle{fancy}
 
@@ -190,9 +191,11 @@
 		\end{pmatrix}
 		\]
 		\ \\
-		\[
-		\setlength{\extrarowheight}{2pt}
-		\begin{tabular}{cccc}
+		\begin{multicols}{2}
+			Nach Auswahl von $x_1$: \\\\
+			$
+			\setlength{\extrarowheight}{2pt}
+			\begin{tabular}{cccc}
 			\hhline{~~--}
 			& \multicolumn{1}{c|}{}    & \multicolumn{1}{c}{\cellcolor[gray]{0.9}$x_1$} & \multicolumn{1}{c}{$x_2$} \\ \hhline{~---}
 			\multicolumn{1}{c|}{}    & \multicolumn{1}{c|}{-3} & \multicolumn{1}{c}{\cellcolor[gray]{0.9}-7}   & \multicolumn{1}{c}{-7} \\ \hline
@@ -200,23 +203,24 @@
 			\multicolumn{1}{|c|}{\cellcolor[gray]{0.9}$u_2$} & \multicolumn{1}{c|}{\cellcolor[gray]{0.9}18} & 2 & \cellcolor[gray]{0.9}1\\
 			\multicolumn{1}{|c|}{$u_3$} & \multicolumn{1}{c|}{35} & \cellcolor[gray]{0.9}2 & 5\\
 			\multicolumn{4}{c}{$B^+ = \{u_1, u_2, u_3\}$} 
-		\end{tabular}
-		\setlength{\extrarowheight}{0pt}
-		\quad
-		x^* = 
-		\begin{pmatrix}
-		x_1\\
-		x_2
-		\end{pmatrix}
-		=
-		\begin{pmatrix}
-		0\\
-		0
-		\end{pmatrix}
-		\quad
-		\quad
-		\setlength{\extrarowheight}{2pt}
-		\begin{tabular}{ccrr}
+			\end{tabular}
+			\setlength{\extrarowheight}{0pt}
+			\quad
+			x^* = 
+			\begin{pmatrix}
+			x_1\\
+			x_2
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+			0\\
+			0
+			\end{pmatrix}
+			$
+			\\\\\\
+			$
+			\setlength{\extrarowheight}{2pt}
+			\begin{tabular}{ccrr}
 			\hhline{~~--}
 			& \multicolumn{1}{c|}{}    & \multicolumn{1}{r}{$u_2$} & \multicolumn{1}{r}{\cellcolor[gray]{0.9}$x_2$} \\ \hhline{~---} 
 			\multicolumn{1}{c|}{}    & \multicolumn{1}{c|}{60} & \multicolumn{1}{r}{$\frac{7}{2}$} & \multicolumn{1}{r}{\cellcolor[gray]{0.9}$-\frac{7}{2}$} \\ \hline
@@ -224,47 +228,139 @@
 			\multicolumn{1}{|c|}{$x_1$} & \multicolumn{1}{c|}{9} & $\frac{1}{2}$ & \cellcolor[gray]{0.9}$\frac{1}{2}$ \\
 			\multicolumn{1}{|c|}{$u_3$} & \multicolumn{1}{c|}{17} & -1 & \cellcolor[gray]{0.9}4\\
 			\multicolumn{4}{c}{$B^+ = \{u_1, x_1, u_3\}$}
-		\end{tabular}
-		\setlength{\extrarowheight}{0pt}
-		\quad
-		x^* = 
-		\begin{pmatrix}
-		x_1\\
-		x_2
-		\end{pmatrix}
-		=
-		\begin{pmatrix}
-		9\\
-		0
-		\end{pmatrix}
-		\]
-		\\\
+			\end{tabular}
+			\setlength{\extrarowheight}{0pt}
+			\quad
+			x^* = 
+			\begin{pmatrix}
+			x_1\\
+			x_2
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+			9\\
+			0
+			\end{pmatrix}
+			$
+			\\\\\\
+			$
+			\setlength{\extrarowheight}{2pt}
+			\begin{tabular}{cccc}
+			\cline{3-4}
+			& \multicolumn{1}{c|}{}    & \multicolumn{1}{c}{$u_2$} & \multicolumn{1}{c}{$u_1$} \\ \cline{2-4}
+			\multicolumn{1}{c|}{}    & \multicolumn{1}{c|}{67} & \multicolumn{1}{c}{0}   & \multicolumn{1}{c}{7} \\ \hline
+			\multicolumn{1}{|c|}{$x_2$} & \multicolumn{1}{c|}{2} & -1 & 2\\
+			\multicolumn{1}{|c|}{$x_1$} & \multicolumn{1}{c|}{8} & 1 & -1\\
+			\multicolumn{1}{|c|}{$u_3$} & \multicolumn{1}{c|}{9} & 3 & -8
+			\end{tabular}
+			\setlength{\extrarowheight}{0pt}
+			\quad
+			x^* = 
+			\begin{pmatrix}
+			x_1\\
+			x_2
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+			8\\
+			2
+			\end{pmatrix}
+			$
+			\columnbreak
+			
+			Nach Auswahl von $x_2$: \\\\
+			$
+			\setlength{\extrarowheight}{2pt}
+			\begin{tabular}{cccc}
+			\hhline{~~--}
+			& \multicolumn{1}{c|}{} & \multicolumn{1}{c}{$x_1$} & \multicolumn{1}{c}{\cellcolor[gray]{0.9}$x_2$} \\ \hhline{~---}
+			\multicolumn{1}{c|}{} & \multicolumn{1}{c|}{-3} & \multicolumn{1}{c}{-7} & \multicolumn{1}{c}{\cellcolor[gray]{0.9}-7} \\ \hline
+			\multicolumn{1}{|c|}{$u_1$} & \multicolumn{1}{c|}{10} & 1 & \cellcolor[gray]{0.9}1\\
+			\multicolumn{1}{|c|}{$u_2$} & \multicolumn{1}{c|}{18} & 2 & \cellcolor[gray]{0.9}1\\
+			\multicolumn{1}{|c|}{\cellcolor[gray]{0.9}$u_3$} & \multicolumn{1}{c|}{\cellcolor[gray]{0.9}35} & \cellcolor[gray]{0.9}2 & 5\\
+			\multicolumn{4}{c}{$B^+ = \{u_1, u_2, u_3\}$} 
+			\end{tabular}
+			\setlength{\extrarowheight}{0pt}
+			\quad
+			x^* = 
+			\begin{pmatrix}
+			x_1\\
+			x_2
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+			0\\
+			0
+			\end{pmatrix}
+			$
+			\\\\\\
+			$
+			\setlength{\extrarowheight}{2pt}
+			\begin{tabular}{ccrr}
+			\hhline{~~--}
+			& \multicolumn{1}{c|}{} & \multicolumn{1}{r}{\cellcolor[gray]{0.9}$x_1$} & \multicolumn{1}{r}{$u_3$} \\ \hhline{~---} 
+			\multicolumn{1}{c|}{} & \multicolumn{1}{c|}{46} & \multicolumn{1}{r}{\cellcolor[gray]{0.9}$-\frac{21}{5}$} & \multicolumn{1}{r}{$-\frac{7}{5}$} \\ \hline
+			\multicolumn{1}{|c|}{\cellcolor[gray]{0.9}$u_1$} & \multicolumn{1}{c|}{\cellcolor[gray]{0.9}3} & $\frac{3}{5}$ & \cellcolor[gray]{0.9}$-\frac{1}{5}$ \\
+			\multicolumn{1}{|c|}{$u_2$} & \multicolumn{1}{c|}{11} & \cellcolor[gray]{0.9}$\frac{8}{5}$ & $-\frac{1}{5}$ \\
+			\multicolumn{1}{|c|}{$x_2$} & \multicolumn{1}{c|}{7} & \cellcolor[gray]{0.9}$\frac{2}{5}$ & $\frac{1}{5}$ \\
+			\multicolumn{4}{c}{$B^+ = \{u_1, u_2, x_2\}$}
+			\end{tabular}
+			\setlength{\extrarowheight}{0pt}
+			\quad
+			x^* = 
+			\begin{pmatrix}
+			x_1\\
+			x_2
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+			0\\
+			7
+			\end{pmatrix}
+			$
+			\\\\\\
+			$
+			\setlength{\extrarowheight}{2pt}
+			\begin{tabular}{cccc}
+			\cline{3-4}
+			& \multicolumn{1}{c|}{} & \multicolumn{1}{c}{$u_1$} & \multicolumn{1}{c}{$u_3$} \\ \cline{2-4}
+			\multicolumn{1}{c|}{} & \multicolumn{1}{c|}{67} & \multicolumn{1}{c}{7} & \multicolumn{1}{c}{0} \\ \hline
+			\multicolumn{1}{|c|}{$x_1$} & \multicolumn{1}{c|}{5} & $\frac{5}{3}$ & $-\frac{1}{3}$\\
+			\multicolumn{1}{|c|}{$u_2$} & \multicolumn{1}{c|}{3} & $\frac{8}{3}$ & $\frac{1}{3}$\\
+			\multicolumn{1}{|c|}{$x_2$} & \multicolumn{1}{c|}{5} & $\frac{2}{3}$ & $\frac{1}{3}$
+			\end{tabular}
+			\setlength{\extrarowheight}{0pt}
+			\quad
+			x^* = 
+			\begin{pmatrix}
+			x_1\\
+			x_2
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+			5\\
+			5
+			\end{pmatrix}
+			$
+		\end{multicols}
+		Der Wert der Zielfunktion ist 67, die vollständige Lösung ist:
 		\[
-		\setlength{\extrarowheight}{2pt}
-		\begin{tabular}{cccc}
-		\cline{3-4}
-		& \multicolumn{1}{c|}{}    & \multicolumn{1}{c}{$u_2$} & \multicolumn{1}{c}{$u_1$} \\ \cline{2-4}
-		\multicolumn{1}{c|}{}    & \multicolumn{1}{c|}{67} & \multicolumn{1}{c}{0}   & \multicolumn{1}{c}{7} \\ \hline
-		\multicolumn{1}{|c|}{$x_2$} & \multicolumn{1}{c|}{2} & -1 & 2\\
-		\multicolumn{1}{|c|}{$x_1$} & \multicolumn{1}{c|}{8} & 1 & -1\\
-		\multicolumn{1}{|c|}{$u_3$} & \multicolumn{1}{c|}{9} & 3 & -8
-		\end{tabular}
-		\setlength{\extrarowheight}{0pt}		
-		\quad
-		x^* = 
-		\begin{pmatrix}
-		x_1\\
-		x_2
-		\end{pmatrix}
-		=
+		\Big \{
+		\lambda 
 		\begin{pmatrix}
 		8\\
 		2
 		\end{pmatrix}
-		\quad
-		\text{Damit ist die Tabelle optimal, der Wert der Zielfunktion ist 67.}
+		+
+		(1 - \lambda)
+		\begin{pmatrix}
+		5\\
+		5
+		\end{pmatrix}
+		\mid
+		\lambda \in [0,1] \Big\}
 		\]
-		\\\\\ 
+		\\\\
 		\item
 		Nach Hinzuf"ugen von Schlupfvariablen erhalten wir die folgende Matrix:\\
 		\[
