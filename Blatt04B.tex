@@ -8,8 +8,10 @@
 \usepackage{fancyhdr} 			%Headerstyles
 \usepackage{colortbl}			%Farben in Tabellen
 \usepackage{hhline}				%Rahmen in farbigen Cellen
+\usepackage{multicol}
 \usepackage[margin=2.0cm,headheight=40pt,top=3cm]{geometry}
 \pagestyle{fancy}
+\setlength{\columnseprule}{1pt}
 
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -53,66 +55,131 @@
 	\textbf{Aufgabe 04}\\
 	\begin{enumerate}[a)]
 		\item
-			\begin{enumerate}
-				\item[a1)]
-				Jacobi-Matrix:
-				\[
-				J = 
-				\begin{pmatrix}
-					\dfrac{1}{y} \quad -\dfrac{x}{y^2}
-				\end{pmatrix}
-				\]
-				Absolute komponentenweise Kondition:
-				\[
-				\kappa^{abs}_{1,1} = \Big\vert \dfrac{1}{y} \Big\vert \quad\quad \kappa^{abs}_{1,2} = \Big\vert -\dfrac{x}{y^2} \Big \vert
-				\]
-				Relative komponentenweise Kondition:
-				\[
-				\kappa^{rel}_{1,1} = \Big\vert \dfrac{1}{y}\Big\vert \cdot \dfrac{\vert x \vert}{\Big \vert \dfrac{x}{y} \Big\vert} \quad\quad \kappa^{rel}_{1,2} = \Big\vert -\dfrac{x}{y^2}\Big\vert \cdot \dfrac{\vert y \vert}{\Big \vert \dfrac{x}{y} \Big\vert}
-				\]
-				Absolute normweise Kondition:
-				\[
-				\kappa_{abs}(x,y) = \Vert J \Vert = max\{\Big\vert \dfrac{1}{y} \Big\vert + \Big\vert -\dfrac{x}{y^2} \Big \vert\}
-				\]
-				Relative normweise Kondition:
-				\[
-				\kappa_{rel}(x,y) = \dfrac{\vert x \vert + \vert y \vert}{\Big\vert \dfrac{1}{y} \Big\vert + \Big\vert \dfrac{x}{y^2} \Big \vert}
-				\]
-				\item[a2)]
-				Jacobi-Matrix:
-				\[
-				J = 
-				\begin{pmatrix}
-					y \cdot cos(x \cdot y) \quad x \cdot cos(x \cdot y)
-				\end{pmatrix}
-				\]
-				Absolute komponentenweise Kondition:
-				\[
-				\kappa^{abs}_{1,1} = \Big\vert y \cdot cos(x \cdot y) \Big\vert \quad\quad \kappa^{abs}_{1,2} = \Big\vert x \cdot cos(x \cdot y) \Big \vert
-				\]
-				Relative komponentenweise Kondition:
-				\[
-				\kappa^{rel}_{1,1} = \Big\vert y \cdot cos(x \cdot y) \Big\vert \cdot \dfrac{\vert x \vert}{\Big \vert sin(x \cdot y) \Big\vert} \quad\quad \kappa^{rel}_{1,2} = \Big\vert x \cdot cos(x \cdot y) \Big\vert \cdot \dfrac{\vert y \vert}{\Big \vert sin(x \cdot y) \Big\vert}
-				\]
-				Absolute normweise Kondition:
-				\[
-				\kappa_{abs}(x,y) = \Vert J \Vert = max\{\vert y \cdot cos(x \cdot y)\vert + \vert x \cdot cos(x \cdot y) \vert\}
-				\]
-				Relative normweise Kondition:
-				\[
-				\kappa_{rel}(x,y) = \dfrac{\vert x \vert + \vert y \vert}{\vert y \cdot cos(x \cdot y) \vert + \vert x \cdot cos(x \cdot y \vert}
-				\]
-			\end{enumerate}
-				\item
-			\begin{enumerate}
-				\item
-				\item
-				\item
-			\end{enumerate}
-
-
+		\begin{enumerate}
+			\item[a1)]
+			Jacobi-Matrix:
+			\[
+			J = 
+			\begin{pmatrix}
+			\dfrac{1}{y} \quad -\dfrac{x}{y^2}
+			\end{pmatrix}
+			\]
+			Absolute komponentenweise Kondition:
+			\[
+			\kappa^{abs}_{1,1} = \Big\vert \dfrac{1}{y} \Big\vert \quad\quad \kappa^{abs}_{1,2} = \Big\vert -\dfrac{x}{y^2} \Big \vert
+			\]
+			Relative komponentenweise Kondition:
+			\[
+			\kappa^{rel}_{1,1} = \Big\vert \dfrac{1}{y}\Big\vert \cdot \dfrac{\vert x \vert}{\Big \vert \dfrac{x}{y} \Big\vert} \quad\quad \kappa^{rel}_{1,2} = \Big\vert -\dfrac{x}{y^2}\Big\vert \cdot \dfrac{\vert y \vert}{\Big \vert \dfrac{x}{y} \Big\vert}
+			\]
+			Absolute normweise Kondition:
+			\[
+			\kappa_{abs}(x,y) = \Vert J \Vert = max\{\Big\vert \dfrac{1}{y} \Big\vert + \Big\vert -\dfrac{x}{y^2} \Big \vert\}
+			\]
+			Relative normweise Kondition:
+			\[
+			\kappa_{rel}(x,y) = \dfrac{\vert x \vert + \vert y \vert}{\Big\vert \dfrac{1}{y} \Big\vert + \Big\vert \dfrac{x}{y^2} \Big \vert}
+			\]
+			\item[a2)]
+			Jacobi-Matrix:
+			\[
+			J = 
+			\begin{pmatrix}
+			y \cdot cos(x \cdot y) \quad x \cdot cos(x \cdot y)
+			\end{pmatrix}
+			\]
+			Absolute komponentenweise Kondition:
+			\[
+			\kappa^{abs}_{1,1} = \Big\vert y \cdot cos(x \cdot y) \Big\vert \quad\quad \kappa^{abs}_{1,2} = \Big\vert x \cdot cos(x \cdot y) \Big \vert
+			\]
+			Relative komponentenweise Kondition:
+			\[
+			\kappa^{rel}_{1,1} = \Big\vert y \cdot cos(x \cdot y) \Big\vert \cdot \dfrac{\vert x \vert}{\Big \vert sin(x \cdot y) \Big\vert} \quad\quad \kappa^{rel}_{1,2} = \Big\vert x \cdot cos(x \cdot y) \Big\vert \cdot \dfrac{\vert y \vert}{\Big \vert sin(x \cdot y) \Big\vert}
+			\]
+			Absolute normweise Kondition:
+			\[
+			\kappa_{abs}(x,y) = \Vert J \Vert = max\{\vert y \cdot cos(x \cdot y)\vert + \vert x \cdot cos(x \cdot y) \vert\}
+			\]
+			Relative normweise Kondition:
+			\[
+			\kappa_{rel}(x,y) = \dfrac{\vert x \vert + \vert y \vert}{\vert y \cdot cos(x \cdot y) \vert + \vert x \cdot cos(x \cdot y \vert}
+			\]
+		\end{enumerate}
+		\newpage
+		\item
+		\begin{enumerate}[b1)]
+			\item 
+			$A^{-1} = \dfrac{1}{2,01 - 2}
+			\begin{pmatrix}
+			2,01 & -2\\
+			-1 & 1
+			\end{pmatrix}
+			= \dfrac{1}{0,01}
+			\begin{pmatrix}
+			2,01 & -2\\
+			-1 & 1
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+			201 & -200\\
+			-100 & 100
+			\end{pmatrix}
+			$\\
+			
+			Kondition von $A = \Vert A \Vert - \Vert A^{-1} \Vert = \mathrm{max}(2, 4,01) \cdot \mathrm{max}(301, 300) = 4,01 \cdot 300 = \underline{\underline{1207,1}}$
+			\item
+			$\Vert \varDelta A \Vert \cdot \Vert A^{-1} \Vert = \Big \Vert
+			\begin{pmatrix}
+			0,001 & 0\\
+			0 & 0
+			\end{pmatrix}
+			\Big \Vert  \cdot 301 = 0,001 \cdot 301 = 0,301 < 1$\\
+			
+			$\dfrac{\Vert \varDelta x \Vert}{\Vert x \Vert} \leq \dfrac{1207,1}{1 - 1207,1 \cdot \frac{0,001}{4,01}} \Big (\dfrac{0,01}{2} + \dfrac{0,001}{4,01} \Bigg) = 9,065$ für die obere Schranke.
+			\item \ \\
+			
+			\begin{multicols}{2}
+				\begin{center}
+					$A_x = y$\\
+					$\mathrm{I} \ x_1 + 2x_2 = 1$\\
+					$\mathrm{II} \ x_2 + 2,01x_2 = 1$\\
+					$\mathrm{I} \Leftrightarrow x_1 = 1 -2x_2$\\
+					$\Rightarrow 1 -2x_2 + 2,01x_1 = 1$\\
+					$\Leftrightarrow 1 - 0,01x_2 = 1$\\
+					$\Leftrightarrow x_2 = 0$\\
+					$\Rightarrow x_1 = 1$\\
+					$x = \begin{pmatrix}
+					1\\
+					0
+					\end{pmatrix}
+					$
+				\end{center}
+				\columnbreak
+				\begin{center}
+					$\tilde{A}_{\tilde{x}} = \tilde{y}$\\
+					$\mathrm{I} \ 1,001 \tilde{x_1} + 2\tilde{x_2} = 0,99$\\
+					$\mathrm{II} \ \tilde{x_1} + 2,01\tilde{x_2} = 1$\\
+					$\mathrm{II} \Leftrightarrow \tilde{x_1} = 1 - 2,01\tilde{x_2}$\\
+					$\Rightarrow 1,001(1 - 2,01\tilde{x_2}) + 2\tilde{x_2} = 0,99$\\
+					$\Leftrightarrow 1,001 - 2,01201\tilde{x_2} + 2\tilde{x_2} = 0.99$\\
+					$\Leftrightarrow 1,001 - 0,01201\tilde{x_2} = 0,99$\\
+					$\Leftrightarrow 0,01201 \tilde{x_2} = 0,011$\\
+					$\Rightarrow \tilde{x_2} = \frac{1100}{1201} \ \tilde{x_1} = -\frac{1010}{1201}$\\ \ \\
+					$\tilde{x} = 
+					\begin{pmatrix}
+					-\frac{1010}{1201}\\[2pt]
+					\frac{1100}{1201}
+					\end{pmatrix}$
+				\end{center}
+			\end{multicols}
+			\[
+			\dfrac{\Vert \varDelta x \Vert}{\Vert x \Vert} = \dfrac{\Big \Vert \begin{pmatrix} -\frac{1010}{1201} \\[2pt] \frac{1100}{1201} \end{pmatrix} \Big \Vert} {\Big \Vert \begin{pmatrix} 1\\ 0 \end{pmatrix} \Big \Vert} = \dfrac{1,756}{1} < 9
+			\]
+		\end{enumerate}
+		
+		
 	\end{enumerate}
 	
 	
-
+	
 \end{document}
