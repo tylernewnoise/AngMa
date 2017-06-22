@@ -26,28 +26,28 @@
 	Beweis durch Kontraposition: Angenommen die drei Aussagen stimmen. Wir finden ein Gegenbeispiel für alle drei Aussagen:\\
 	
 	\begin{compactenum} [a)]
-		\item Sei $ a := (-1)^0\cdot2^{-3}\cdot0,10\underbrace{11...11}_{50 mal} \qquad b := (-1)^0\cdot2^{-6}\cdot0,111101 \Longrightarrow a, b \in \mathbb{G}$\\
-		$ a+b = (-1)^0\cdot2^{-6}\cdot0,00010\underbrace{11...11}_{50 mal} + (-1)^0\cdot2^{-6}\cdot0,111101 \\
-		= (-1)^0\cdot2^{-7}\cdot0,1000010\underbrace{11..11}_{49 mal} \not\in \mathbb{G}$
-		\item  Sei $ a:= (-1)^0\cdot2^{-52}\cdot0,\underbrace{11..11}_{52 mal} \qquad b:= (-1)^0\cdot2^0\cdot0,1$\\
+		\item Sei $ a := (-1)^0\cdot2^{3}\cdot0,10\underbrace{11...11}_{50 mal} \qquad b := (-1)^0\cdot2^{6}\cdot0,111101 \Longrightarrow a, b \in \mathbb{G}$\\
+		$ a+b = (-1)^0\cdot2^{6}\cdot0,00010\underbrace{11...11}_{50 mal} + (-1)^0\cdot2^{6}\cdot0,111101 \\
+		= (-1)^0\cdot2^{7}\cdot0,1000010\underbrace{11..11}_{49 mal} \not\in \mathbb{G}$
+		\item  Sei $ a:= (-1)^0\cdot2^{52}\cdot0,\underbrace{11..11}_{52 mal} \qquad b:= (-1)^0\cdot2^0\cdot0,1$\\
 		\begin{tabbing}
 			$ a\boxplus b$ \=$= rd(a+b)$ \\
-			\>$ =rd((-1)^0\cdot2^{-52}\cdot0,\underbrace{11..11}_{52 mal}+(-1)^0\cdot2^0\cdot0,1) $ \\
-			\>$ =rd((-1)^0\cdot2^{-52}\cdot0,\underbrace{11..11}_{52 mal}+(-1)^0\cdot2^{-52}\cdot0,\underbrace{00..00}_{52 mal}1) $ \\
-			\>$ =rd((-1)^0\cdot2^{-52}\cdot0,\underbrace{11..11}_{53 mal})$\\
-			\>$ =(-1)^0\cdot2^{-52}\cdot0,\underbrace{11..11}_{52 mal}$\\
+			\>$ =rd((-1)^0\cdot2^{52}\cdot0,\underbrace{11..11}_{52 mal}+(-1)^0\cdot2^0\cdot0,1) $ \\
+			\>$ =rd((-1)^0\cdot2^{52}\cdot0,\underbrace{11..11}_{52 mal}+(-1)^0\cdot2^{52}\cdot0,\underbrace{00..00}_{52 mal}1) $ \\
+			\>$ =rd((-1)^0\cdot2^{52}\cdot0,\underbrace{11..11}_{53 mal})$\\
+			\>$ =(-1)^0\cdot2^{52}\cdot0,\underbrace{11..11}_{52 mal}$\\
 			\>$ =a $
 		\end{tabbing}
-		\item Sei $ a:= (-1)^0\cdot2^{-52}\cdot0,\underbrace{11..11}_{52 mal} \qquad b:= (-1)^0\cdot2^0\cdot0,1 \qquad c:= b $\\
+		\item Sei $ a:= (-1)^0\cdot2^{52}\cdot0,\underbrace{11..11}_{52 mal} \qquad b:= (-1)^0\cdot2^0\cdot0,1 \qquad c:= b $\\
 		$ (a\boxplus b) \boxplus c \overset{\text{siehe Aufgabe b)}}{=} a \boxplus c \overset{\text{weil b $\equiv$ c}}{=} a$\\
 		\begin{tabbing}
 			$ a\boxplus (b\boxplus c) $ \=$ = a \boxplus (rd((-1)^0\cdot2^0\cdot0,1+(-1)^0\cdot2^0\cdot0,1))$\\
-			\> $ =a \boxplus (rd((-1)^0\cdot2^{-1}\cdot0,1)) $\\
-			\> $ =a \boxplus (-1)^0\cdot2^{-1}\cdot0,1 $\\
-			\> $ =rd((-1)^0\cdot2^{-52}\cdot0,\underbrace{11..11}_{52 mal}+(-1)^0\cdot2^{-1}\cdot0,1) $\\
-			\> $ =rd((-1)^0\cdot2^{-52}\cdot0,\underbrace{11..11}_{52 mal}+(-1)^0\cdot2^{-52}\cdot0,\underbrace{00..00}_{51 mal}1 $\\
-			\> $ =rd((-1)^0\cdot2^{-52}\cdot1,0) $ \\
-			\> $ =rd((-1)^0\cdot2^{-53}\cdot0,1) $\\
+			\> $ =a \boxplus (rd((-1)^0\cdot2^{1}\cdot0,1)) $\\
+			\> $ =a \boxplus (-1)^0\cdot2^{1}\cdot0,1 $\\
+			\> $ =rd((-1)^0\cdot2^{52}\cdot0,\underbrace{11..11}_{52 mal}+(-1)^0\cdot2^{1}\cdot0,1) $\\
+			\> $ =rd((-1)^0\cdot2^{52}\cdot0,\underbrace{11..11}_{52 mal}+(-1)^0\cdot2^{52}\cdot0,\underbrace{00..00}_{51 mal}1 $\\
+			\> $ =rd((-1)^0\cdot2^{52}\cdot1,0) $ \\
+			\> $ =rd((-1)^0\cdot2^{53}\cdot0,1) $\\
 			\> $ \neq a $
 		\end{tabbing}
 	\end{compactenum}
@@ -74,35 +74,35 @@
 			\]
 			Absolute normweise Kondition:
 			\[
-			\kappa_{abs}(x,y) = \Vert J \Vert = max\{\Big\vert \dfrac{1}{y} \Big\vert + \Big\vert -\dfrac{x}{y^2} \Big \vert\}
+			\kappa_{abs}(x,y) = \Vert J \Vert = \mathrm{max}\{\Big\vert \dfrac{1}{y} \Big\vert,  \Big\vert -\dfrac{x}{y^2} \Big \vert\}
 			\]
 			Relative normweise Kondition:
 			\[
-			\kappa_{rel}(x,y) = \dfrac{\vert x \vert + \vert y \vert}{\Big\vert \dfrac{1}{y} \Big\vert + \Big\vert \dfrac{x}{y^2} \Big \vert}
+			\kappa_{rel}(x,y) =\kappa_{abs} \cdot \dfrac{\vert x \vert + \vert y \vert}{\Big\vert \dfrac{x}{y} \Big \vert}
 			\]
 			\item[a2)]
 			Jacobi-Matrix:
 			\[
 			J = 
 			\begin{pmatrix}
-			y \cdot cos(x \cdot y) \quad x \cdot cos(x \cdot y)
+			y \cdot \mathrm{cos}(x \cdot y) \quad x \cdot \mathrm{cos}(x \cdot y)
 			\end{pmatrix}
 			\]
 			Absolute komponentenweise Kondition:
 			\[
-			\kappa^{abs}_{1,1} = \Big\vert y \cdot cos(x \cdot y) \Big\vert \quad\quad \kappa^{abs}_{1,2} = \Big\vert x \cdot cos(x \cdot y) \Big \vert
+			\kappa^{abs}_{1,1} = \Big\vert y \cdot \mathrm{cos}(x \cdot y) \Big\vert \quad\quad \kappa^{abs}_{1,2} = \Big\vert x \cdot \mathrm{cos}(x \cdot y) \Big \vert
 			\]
 			Relative komponentenweise Kondition:
 			\[
-			\kappa^{rel}_{1,1} = \Big\vert y \cdot cos(x \cdot y) \Big\vert \cdot \dfrac{\vert x \vert}{\Big \vert sin(x \cdot y) \Big\vert} \quad\quad \kappa^{rel}_{1,2} = \Big\vert x \cdot cos(x \cdot y) \Big\vert \cdot \dfrac{\vert y \vert}{\Big \vert sin(x \cdot y) \Big\vert}
+			\kappa^{rel}_{1,1} = \Big\vert y \cdot \mathrm{cos}(x \cdot y) \Big\vert \cdot \dfrac{\vert x \vert}{\Big \vert \mathrm{sin}(x \cdot y) \Big\vert} \quad\quad \kappa^{rel}_{1,2} = \Big\vert x \cdot \mathrm{cos}(x \cdot y) \Big\vert \cdot \dfrac{\vert y \vert}{\Big \vert \mathrm{sin}(x \cdot y) \Big\vert}
 			\]
 			Absolute normweise Kondition:
 			\[
-			\kappa_{abs}(x,y) = \Vert J \Vert = max\{\vert y \cdot cos(x \cdot y)\vert + \vert x \cdot cos(x \cdot y) \vert\}
+			\kappa_{abs}(x,y) = \Vert J \Vert = \mathrm{max}\{\vert y \cdot \mathrm{cos}(x \cdot y)\vert , \vert x \cdot \mathrm{cos}(x \cdot y) \vert\}
 			\]
 			Relative normweise Kondition:
 			\[
-			\kappa_{rel}(x,y) = \dfrac{\vert x \vert + \vert y \vert}{\vert y \cdot cos(x \cdot y) \vert + \vert x \cdot cos(x \cdot y \vert}
+			\kappa_{rel}(x,y) = \kappa_{abs} \cdot \dfrac{\vert x \vert + \vert y \vert}{\vert \mathrm{sin}(x \cdot y) \vert}
 			\]
 		\end{enumerate}
 		\newpage
@@ -173,7 +173,7 @@
 				\end{center}
 			\end{multicols}
 			\[
-			\dfrac{\Vert \varDelta x \Vert}{\Vert x \Vert} = \dfrac{\Big \Vert \begin{pmatrix} -\frac{1010}{1201} \\[2pt] \frac{1100}{1201} \end{pmatrix} \Big \Vert} {\Big \Vert \begin{pmatrix} 1\\ 0 \end{pmatrix} \Big \Vert} = \dfrac{1,756}{1} < 9
+			\dfrac{\Vert \varDelta x \Vert}{\Vert x \Vert} = \dfrac{\Big \Vert \begin{pmatrix} -\frac{2211}{1201} \\[2pt] \frac{1100}{1201} \end{pmatrix} \Big \Vert} {\Big \Vert \begin{pmatrix} 1\\ 0 \end{pmatrix} \Big \Vert} = \dfrac{2,756}{1} < 9
 			\]
 		\end{enumerate}
 		
