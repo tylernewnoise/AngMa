@@ -1,0 +1,65 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[ngerman]{babel}		%dt. Übersetzung und Umlaute
+\usepackage[utf8]{inputenc}		%Umlaute direkt eingeben
+\usepackage{mathtools}			%Mathekrams
+\usepackage{paralist}			%bessere Listen
+\usepackage{amssymb}			%Mathesymbole
+\usepackage{amsthm}				%typesetting theorems
+
+\usepackage{fancyhdr} 			%Headerstyles
+\usepackage[margin=2.0cm,headheight=40pt,top=3cm]{geometry}
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\lhead{Blatt 06 - Teil 1}
+\rhead{Angewandte Mathematik}
+\cfoot{}
+\rfoot{\thepage}
+\begin{document}
+	\parindent0pt
+	\textbf{Aufgabe 01}\\
+	\begin{enumerate}[a)]
+		\item 
+		\item 
+		\item 
+		\newpage
+		\item Lagrange Interpolationspolynom f"ur $\omega(x) = \underset{j \neq k \atop j = 0}{\overset{4}{\prod}}  \dfrac{x - x_j}{x_k - x_j}$\\
+		\begin{align*}
+			\omega_0(x) & = \dfrac{(x - x_1)(x - x_2)(x - x_3)(x - x_4)}{(x_0 - x_1)(x_0 - x_2)(x_0 - x_3)(x_0 - x_4)} = \dfrac{(x + 1)(x - 0)(x - 1)(x - 2)}{(-2 + 1)(-2 -0)(-2 -1)(-2 -2)}\\
+			& = \dfrac{(x^2 + x)(x^2 - 2x - x + 2)}{(-1)(-2)(-3)(-4)} = \dfrac{x^4 - 2x^3 -x^3 + 2x^2 +x^3 -2x^2 -x^2 + 2x}{24}\\
+			& = \frac{1}{24}(x^4 - 2x^3 -x^2 + 2x)\\
+			\omega_1(x) & = \dfrac{(x - x_0)(x - x_2)(x - x_3)(x - x_4)}{(x_1 - x_0)(x_1 - x_2)(x_1 - x_3)(x_1 - x_4)} = \dfrac{(x + 2)(x - 0)(x - 1)(x - 2)}{(-1 + 2)(-1)(-1 - 1)(-1 - 2)}\\
+			& = \dfrac{(x^2 + 2x)(x^2 - 3x + 2)}{(1)(-1)(-2)(-3)} = \dfrac{x^4 - 3x^3 + 2x^2 + 2x^3 - 6x^2 + 4x}{-6}\\
+			& = -\dfrac{1}{6}(x^4 - x^3 -4x^2 + 4x)\\
+			\omega_2(x) & = \dfrac{(x - x_0)(x - x_1)(x - x_3)(x - x_4)}{(x_2 - x_0)(x_2 - x_1)(x_2 - x_3)(x_2 - x_4)} = \dfrac{(x + 2)(x + 1)(x - 1)(x - 2)}{(0 + 2)(0 + 1)(0 - 1)(0 - 2)}\\
+			& = \dfrac{(x^2 + 3x + 2)(x^2 - 3x + 2)}{(2)(1)(-1)(-2)} = \dfrac{(x^4 - 3x^3 + 2x^2 + 3x^3 - 9x^2 + 6x + 2x^2 - 6x + 4)}{4}\\
+			& = \dfrac{1}{4}(x^4 - 4x^2 + 4)\\
+			\omega_3(x) & = \dfrac{(x - x_0)(x - x_1)(x - x_2)(x - x_4)}{(x_3 - x_0)(x_3 - x_1)(x_3 - x_2)(x_3 - x_4)} = \dfrac{(x + 2)(x + 1)(x)(x - 2)}{(1 + 2)(1 + 1)(1)(1 - 2)}\\
+			& = \dfrac{(x^2 + 3x + 2)(x^2 - 2x)}{(3)(2)(1)(-1)} = \dfrac{x^4 - 2x^3 + 3x^3 -6x^2 + 2x^2 - 4x}{-6}\\
+			& = -\dfrac{1}{6}(x^4 + x^3 - 4x^2 -4x)\\
+			\omega_4(x) & = \dfrac{(x - x_0)(x - x_1)(x - x_2)(x - x_3)}{(x_4 - x_0)(x_4 - x_1)(x_4 - x_2)(x_4 - x_3)} = \dfrac{(x + 2)(x + 1)(x)(x - 1)}{(2 + 2)(2 + 1)(2)(2 - 1)}\\
+			& = \dfrac{(x^2 + 3x  + 2)(x^2 - x)}{(4)(3)(2)(1)} = \dfrac{x^4 - x^3 + 3x^3 -3x^2 + 2x^2 - 2x}{24}\\
+			& = \dfrac{1}{24}(x^4 + 2x^3 - x^2 - 2x)
+		\end{align*}
+		$L_4(x) = \overset{4}{\underset{k = 0}{\sum}}f_k \omega(x)$:\\
+		\begin{align*}
+		 & \dfrac{2}{24}(x^4 - 2x^3 -x^2 + 2x)\\
+		 & + -\dfrac{0}{6}(x^4 - x^3 - 4x^2 + 4x)\\
+		 & + \dfrac{0}{4}(x^4 - 4x^2 + 4)\\
+		 & + -\dfrac{2}{6}(x^4 + x^3 - 4x^2 - 4x)\\
+		 & + \dfrac{6}{24}(x^4 + 2x^3 - x^2 - 2x)
+		 \end{align*}
+		 \[
+		 = \dfrac{2}{24}x^4 - \dfrac{4}{24}x^3 - \dfrac{2}{24}x^2 + \dfrac{4}{24}x - \dfrac{2}{6}x^4 - \dfrac{2}{6}x^3 + \dfrac{8}{6}x^2 + \dfrac{8}{6}x + \dfrac{6}{24}x^4 + \dfrac{12}{24}x^3 - \dfrac{6}{24}x^2 - \dfrac{12}{24}x\\
+		 \]
+		 \[
+		 = \underline{\underline{x^2 + x}}
+		 \]
+		
+		
+	\end{enumerate}
+	
+	
+
+\end{document}
