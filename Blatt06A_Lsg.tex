@@ -5,6 +5,8 @@
 \usepackage{paralist}			%bessere Listen
 \usepackage{amssymb}			%Mathesymbole
 \usepackage{amsthm}				%typesetting theorems
+\usepackage{listings}
+\lstset{language=Java}
 
 \usepackage{fancyhdr} 			%Headerstyles
 \usepackage[margin=2.0cm,headheight=40pt,top=3cm]{geometry}
@@ -56,10 +58,128 @@
 		 \[
 		 = \underline{\underline{x^2 + x}}
 		 \]
-		
-		
 	\end{enumerate}
-	
-	
+	\newpage
+	\textbf{Aufgabe 2}\\
+	\begin{enumerate}[a)]
+		\item 
+		\begin{itemize}
+			\item Trapezregel: $\int_{a}^{b} f(x) dx = \frac{b - a}{2}(f_0 + f_1)$ \\
+			Für ein Intervall: 
+			\[
+			\int_{1}^{e}\mathrm{log}(x)dx = \dfrac{e - 1}{2}(\mathrm{log}(1) + \mathrm{log}(e)) = 0.8591409142295225
+			\]
+			Für mehrere Intervalle:\\
+			\begin{tabular}{|c|c|}
+				\hline 
+				Intervalle & Ergebnis \\ 
+				\hline 
+				2 & 0.9623362015498855 \\ 
+				\hline 
+				4 & 0.9903650088127982 \\ 
+				\hline 
+				8 & 0.9975754238329705\\ 
+				\hline 
+				16 & 0.999392820210616\\ 
+				\hline 
+			\end{tabular} \\
+			\item Simpson-Regel: $\int_{a}^{b} f(x) dx = \frac{b - a}{6}(f_0 + 4f_1(\frac{a + b}{2}) + f_2)$\\
+			Für ein Intervall:
+			\[
+			\int_{1}^{e}\mathrm{log}(x)dx = \dfrac{e - 1}{6}(\mathrm{log}(1) + 4\mathrm{log}\Big(\frac{1+e}{2}\Big) + \mathrm{log}(e)) = 0.996734630656673
+			\]
+			Für mehrere Intervalle:\\
+			\begin{tabular}{|c|c|}
+				\hline 
+				Intervalle & Ergebnis \\ 
+				\hline 
+				2 & 0.9997079445671028 \\ 
+				\hline 
+				4 & 0.9999788955063613 \\ 
+				\hline 
+				8 & 0.9999986190031646\\ 
+				\hline 
+				16 & 0.9999999126024922\\ 
+				\hline 
+			\end{tabular} \\
+			\item exaktes Ergebnis\\
+			\[
+			\int^e_1 \mathrm{log}(x)dx = \int^e_1 1 \cdot \mathrm{log}(x)dx = x \cdot \mathrm{log}(x) - \int^e_1 x \cdot \frac{1}{x}dx = \big[x \cdot \mathrm{log}(x) - x + c \big]^e_1
+			\]
+			\[
+			\Rightarrow \ e \cdot \mathrm{log}(e) - e - 1 \cdot \mathrm{log}(1) - 1 = -2.5377470301014
+			\]
+			\item 
+			zugrunde liegender Quellcode (Java)
+			\begin{lstlisting}
+double a = 1;
+double b = Math.E;
+double steps = 0;
+double result = 0;
 
+System.out.println("Funktion log(x): ");
+System.out.println("***Trapezregel***");
+for (int i = 1; i <= 16; i = i * 2) {
+	steps = (b - a) / i;
+	for (int s = 1; s <= i; s++) {
+		result += (steps / 2) * (Math.log(a) + Math.log(a + steps));
+		a += steps;
+	}
+	System.out.println("Intervalle: " + i + " Ergebnis: " + result);
+	a = 1;
+	result = 0;
+}
+			\end{lstlisting}
+			\newpage
+			\begin{lstlisting}
+System.out.println("\n***Simpson-Regel***");
+for (int i = 1; i <= 16; i = i * 2) {
+	steps = (b - a) / i;
+	for (int s = 1; s <= i; s++) {
+		result += (steps / 6) * (Math.log(a) + Math.log(a + steps)
+			+ 4 * Math.log((steps + a + a) / 2));
+		a += steps;
+	}
+   	System.out.println("Intervalle: " + i + " Ergebnis: " + result);
+	a = 1;
+	result = 0;
+}
+			\end{lstlisting}
+		\end{itemize}
+		\item 
+		\begin{itemize}
+			\item 
+			Trapezregel: $\int_{a}^{b} f(x) dx = \frac{b - a}{2}(f_0 + f_1)$ \\
+			Für
+			\begin{align*}
+			8 \text{ Intervalle } &  : \ 0.3359375\\
+			16 \text{ Intervalle } & : \ 0.333984375
+			\end{align*}
+			\item
+			exaktes Ergebnis:
+			\[
+			\int^1_0 x^2 dx = \Big [\frac{x^3}{3} + c \Big]^1_0 \quad \Rightarrow \quad \frac{1^3}{3} - \frac{0^3}{3} = \frac{1}{3} \approx 0.3333333333
+			\]
+			\item 
+			zugrunde liegender Quellcode (Java)
+			\begin{lstlisting}
+double a = 0;
+double b = 1;
+double steps = 0;
+double result = 0;
+System.out.println("\n\nFunktion x^2: ");
+System.out.println("***Trapezregel***");
+for (int i = 8; i <= 16; i = i * 2) {
+	steps = (b - a) / i;
+	for (int s = 1; s <= i; s++) {
+		result += (steps / 2) * ((a * a) + ((a + steps) * (a + steps)));
+		a += steps;
+	}
+	System.out.println("Intervalle: " + i + " Ergebnis: " + result);
+	a = 0;
+	result = 0;
+}			
+			\end{lstlisting}
+		\end{itemize}
+	\end{enumerate}
 \end{document}
