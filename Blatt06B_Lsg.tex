@@ -1,0 +1,56 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[ngerman]{babel}		%dt. Übersetzung und Umlaute
+\usepackage[utf8]{inputenc}		%Umlaute direkt eingeben
+\usepackage{mathtools}			%Mathekrams
+\usepackage{paralist}			%bessere Listen
+\usepackage{amssymb}			%Mathesymbole
+\usepackage{amsthm}				%typesetting theorems
+\usepackage{listings}
+\lstset{language=Java}
+
+\usepackage{fancyhdr} 			%Headerstyles
+\usepackage[margin=2.0cm,headheight=40pt,top=3cm]{geometry}
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\lhead{Blatt 06 - Teil 2}
+\rhead{Angewandte Mathematik}
+\cfoot{}
+\rfoot{\thepage}
+\begin{document}
+	\parindent0pt
+	\textbf{Aufgabe 03:}
+	\begin{compactenum} [a)]
+		\item
+		\item \begin{itemize}
+			\item $ \mathcal{B} := $ Bayern wird Meister\\
+			$ P(\mathcal{B}) = 17! $\\
+			Anzahl der Reihenfolgen, in denen Bayern nicht Meister wird:\\
+			$ 18! -P(\mathcal{B}) = 18!-17! $
+			\item Wir haben eine Permutation mit Wiederholung\\
+			\begin{compactenum} [1.]
+				\item Um wieder im Nullpunkt zu enden, brauchen wir gleich viele Schritte nach links wie nach Rechts\\
+				$ \Longrightarrow \dfrac{2n!}{n!\cdot n!} $\\
+				\item Um am Punkt k anzukommen, brauchen wir k-Schritte mehr in eine Richtung\\
+				$ \Longrightarrow \dfrac{m!}{\frac{m-k}{2}!\cdot(\frac{m-k}{2}+k)!} $\\
+				 m und k müssen paarweise beide entweder gerade oder ungerade sein, da sonst Punkt k gar nicht erreicht werden kann.  
+			\end{compactenum}
+		\end{itemize}
+	\end{compactenum}\ \\
+	\textbf{Aufgabe 04:}
+	\begin{compactenum} [a)]
+		\item \begin{compactenum} [1.]
+			\item $ P(A_1) = \frac{3}{10} \qquad P(A_2) = \frac{2}{10} \qquad P(A_3) = \frac{5}{10} $\\
+			\item Wir kennen bereits die bedingten Wahrscheinlichkeiten, dass ein Produkt kaputt ist unter der Voraussetzung, dass es von einer bestimmten Produktionsstätte kommt. Daraus lässt sich durch Umstellung des Satzes der bedingten Wahrscheinlichkeit die Wahrscheinlichkeit der Schnittmenge bilden:
+			\begin{align*}
+				P(B|A_1) = \dfrac{15}{1000} \Rightarrow & P(A_1\cap B) = P(B|A_1)\cdot P(A_1) = \dfrac{15}{1000} \cdot \dfrac{3}{10} = \dfrac{45}{10000}\\
+				P(B|A_2) = \dfrac{6}{1000} \Rightarrow & P(A_2\cap B) = P(B|A_2)\cdot P(A_2) = \dfrac{6}{1000} \cdot \dfrac{2}{10} = \dfrac{12}{10000}\\
+				P(B|A_3) = \dfrac{45}{1000} \Rightarrow & P(A_3\cap B) = P(B|A_3)\cdot P(A_3) = \dfrac{45}{1000} \cdot \dfrac{5}{10} = \dfrac{225}{10000}\\
+			\end{align*}
+			\item $ P(B) = P(A_1\cap B) + P(A_2\cap B) + P(A_3\cap B) \\
+			= \dfrac{45}{10000} + \dfrac{12}{10000} + \dfrac{225}{10000} = \dfrac{282}{10000} = 0,0282$
+		\end{compactenum}
+		\item 
+	\end{compactenum}
+\end{document}
